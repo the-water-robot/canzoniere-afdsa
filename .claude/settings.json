@@ -5,7 +5,10 @@
       "Bash(curl -sf -o /dev/null -w \"/rosa → %{http_code}\\\\n\" http://localhost:3000/rosa)",
       "Bash(curl -sf -w \"/api/chords/guitar → %{http_code}\\\\n\" http://localhost:3000/api/chords/guitar)",
       "Bash(npm info *)",
-      "Bash(git commit *)"
+      "Bash(git commit *)",
+      "WebFetch(domain:open.spotify.com)",
+      "WebSearch",
+      "WebFetch(domain:www.kalporz.com)"
     ]
   }
 }
