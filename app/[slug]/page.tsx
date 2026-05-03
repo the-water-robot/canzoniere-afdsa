@@ -1,9 +1,9 @@
 import { notFound } from "next/navigation";
 import { SongView } from "@/components/SongView";
-import { getSong, songs } from "@/lib/songs";
+import { loadAllSongs, loadSong } from "@/lib/loader";
 
 export function generateStaticParams() {
-  return songs.map((s) => ({ slug: s.slug }));
+  return loadAllSongs().map((s) => ({ slug: s.slug }));
 }
 
 export async function generateMetadata({
@@ -12,7 +12,7 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const song = getSong(slug);
+  const song = loadSong(slug);
   if (!song) return { title: "Canzoniere" };
   return {
     title: `${song.title} — Canzoniere`,
@@ -26,7 +26,7 @@ export default async function SongPage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const song = getSong(slug);
+  const song = loadSong(slug);
   if (!song) notFound();
   return <SongView song={song} />;
 }
