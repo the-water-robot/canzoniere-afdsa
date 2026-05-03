@@ -4,7 +4,8 @@ import { useMemo, useState } from "react";
 import Link from "next/link";
 import type { Song, Section } from "@/lib/chordpro";
 import { uniqueChords } from "@/lib/chordpro";
-import { type Instrument, getChord } from "@/lib/chord-shapes";
+import { type Instrument } from "@/lib/chord-shapes";
+import { getVoicings } from "@/lib/chords-db";
 import { ChordDiagram } from "./ChordDiagram";
 import { ThemeToggle } from "./ThemeToggle";
 import { albumBySlug } from "@/lib/albums";
@@ -33,7 +34,13 @@ const KIND_CHORD: Record<string, string> = {
 export function SongView({ song }: { song: Song }) {
   const [instrument, setInstrument] = useState<Instrument>("guitar");
   const [openChord, setOpenChord]   = useState<string | null>(null);
+  const [voicingIdx, setVoicingIdx] = useState(0);
   const [fontStep,  setFontStep]    = useState(0);
+
+  const handleOpenChord = (chord: string) => {
+    setOpenChord(chord);
+    setVoicingIdx(0);
+  };
 
   const chords = useMemo(() => uniqueChords(song), [song]);
   const scale  = 1 + fontStep * 0.1;
@@ -102,7 +109,7 @@ export function SongView({ song }: { song: Song }) {
             <button
               key={c}
               type="button"
-              onClick={() => setOpenChord(c)}
+              onClick={() => handleOpenChord(c)}
               className="shrink-0 rounded-full bg-flamingo/10 px-2.5 py-0.5 font-mono text-sm font-bold text-flamingo ring-1 ring-flamingo/25 transition hover:bg-flamingo/20"
             >
               {c}
@@ -133,7 +140,7 @@ export function SongView({ song }: { song: Song }) {
           <SectionBlock
             key={idx}
             section={section}
-            onChordTap={setOpenChord}
+            onChordTap={handleOpenChord}
           />
         ))}
         {song.notes && (
@@ -151,10 +158,13 @@ export function SongView({ song }: { song: Song }) {
         <ChordSheet
           name={openChord}
           instrument={instrument}
+          voicingIdx={voicingIdx}
+          onChangeVoicing={setVoicingIdx}
           onClose={() => setOpenChord(null)}
-          onSwitchInstrument={() =>
-            setInstrument((i) => (i === "guitar" ? "ukulele" : "guitar"))
-          }
+          onSwitchInstrument={() => {
+            setInstrument((i) => (i === "guitar" ? "ukulele" : "guitar"));
+            setVoicingIdx(0);
+          }}
         />
       )}
     </div>
@@ -226,11 +236,19 @@ function InlineSegment({
 }
 
 function ChordSheet({
-  name, instrument, onClose, onSwitchInstrument,
+  name, instrument, voicingIdx, onChangeVoicing, onClose, onSwitchInstrument,
 }: {
-  name: string; instrument: Instrument; onClose: () => void; onSwitchInstrument: () => void;
+  name: string;
+  instrument: Instrument;
+  voicingIdx: number;
+  onChangeVoicing: (idx: number) => void;
+  onClose: () => void;
+  onSwitchInstrument: () => void;
 }) {
-  const shape = getChord(instrument, name);
+  const voicings = getVoicings(instrument, name);
+  const shape = voicings[voicingIdx] ?? null;
+  const total = voicings.length;
+
   return (
     <div
       className="fixed inset-0 z-50 flex items-end justify-center bg-ink/40 backdrop-blur-sm sm:items-center"
@@ -272,6 +290,32 @@ function ChordSheet({
             </p>
           )}
         </div>
+
+        {total > 1 && (
+          <div className="mt-2 flex items-center justify-between px-1">
+            <button
+              type="button"
+              onClick={() => onChangeVoicing(Math.max(0, voicingIdx - 1))}
+              disabled={voicingIdx === 0}
+              className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-[var(--border)] text-[var(--muted)] transition hover:text-[var(--text)] disabled:opacity-30"
+              aria-label="Posizione precedente"
+            >
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+            </button>
+            <span className="font-mono text-xs text-[var(--muted)]">
+              {voicingIdx + 1} / {total}
+            </span>
+            <button
+              type="button"
+              onClick={() => onChangeVoicing(Math.min(total - 1, voicingIdx + 1))}
+              disabled={voicingIdx === total - 1}
+              className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-[var(--border)] text-[var(--muted)] transition hover:text-[var(--text)] disabled:opacity-30"
+              aria-label="Posizione successiva"
+            >
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+            </button>
+          </div>
+        )}
 
         <button
           type="button"

@@ -63,25 +63,23 @@ export default function AboutPage() {
         {/* Bio */}
         <section className="space-y-4 text-base leading-relaxed">
           <p>
-            Tutto è iniziato in viaggio: una chitarra, un ukulele, una valigia
-            piena di storie. Gli <strong>Animali Fantastici del Sud America</strong>{" "}
-            sono un progetto musicale nato a <strong>Milano</strong> dall'incontro
-            tra <strong>Pit</strong> (voce) e <strong>Dave</strong> (corde),
-            cresciuto poi tra una sagra di paese e una spiaggia caraibica.
+            Gli <strong>Animali Fantastici del Sudamerica</strong> sono una band
+            milanese che ama cantar storie e far ballare, mescolando folk, latin
+            e ritmi travolgenti.
           </p>
           <p>
-            Le canzoni nascono dalle persone incontrate per strada — Rosa a
-            L'Avana, Molly alle Hawaii, Sandrona da chissà dove — e da quelle
-            inventate per stare meglio. Storie cantate dove ogni traccia porta
-            il nome di una persona reale, una vita vera vissuta come finzione,
-            o una fantasia vissuta come realtà.
+            Nati da viaggi in compagnia di ukuleli, sogni e buon umore, si sono
+            allargati strada facendo con fiati, percussioni e l'arte visiva live
+            di <em>Toni $</em>, che trasforma ogni concerto in uno spettacolo
+            anche per gli occhi.
           </p>
           <p>
-            In studio e dal vivo si aggiungono <em>Camilla</em> (sax),{" "}
-            <em>Jeqi</em> (basso), <em>Marci</em> (percussioni),{" "}
-            <em>Brivido</em> (tromba), <em>Il Maestro</em> (violino) e{" "}
-            <em>Toni $</em> (fischio e pittura dal vivo). Una band-orchestra
-            che cambia forma ad ogni tappa.
+            Dopo l'EP <strong>Dlin Dlon</strong> (2018), ispirato agli incontri
+            on the road, hanno servito <strong>Osteria</strong> (2021), un album
+            di racconti surreali tra osterie e brindisi musicali. Attualmente
+            stanno preparando il loro terzo disco, sempre in equilibrio tra
+            realtà e fantasia, pronti a raccontare nuove storie con il ritmo
+            giusto.
           </p>
         </section>
 

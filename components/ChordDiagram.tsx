@@ -28,8 +28,6 @@ export function ChordDiagram({ shape, instrument, size = 140 }: Props) {
   const stringX = (i: number) => padX + i * stringSpacing;
   const fretY = (i: number) => padTop + i * fretSpacing;
 
-  const stroke = "#1a1d24";
-
   return (
     <svg
       viewBox={`0 0 ${width} ${height}`}
@@ -38,6 +36,7 @@ export function ChordDiagram({ shape, instrument, size = 140 }: Props) {
       role="img"
       aria-label={`Diagramma accordo ${shape.name} per ${instrument === "guitar" ? "chitarra" : "ukulele"}`}
       className="select-none"
+      style={{ color: "var(--text)" }}
     >
       <text
         x={width / 2}
@@ -45,7 +44,7 @@ export function ChordDiagram({ shape, instrument, size = 140 }: Props) {
         textAnchor="middle"
         fontSize="14"
         fontWeight="700"
-        fill={stroke}
+        fill="currentColor"
         fontFamily="ui-sans-serif, system-ui"
       >
         {shape.name}
@@ -57,7 +56,7 @@ export function ChordDiagram({ shape, instrument, size = 140 }: Props) {
           y={padTop - 4}
           width={innerW + 2}
           height={4}
-          fill={stroke}
+          fill="currentColor"
         />
       )}
 
@@ -67,7 +66,7 @@ export function ChordDiagram({ shape, instrument, size = 140 }: Props) {
           y={padTop + fretSpacing / 2 + 4}
           textAnchor="end"
           fontSize="10"
-          fill={stroke}
+          fill="currentColor"
           fontFamily="ui-sans-serif, system-ui"
         >
           {baseFret}fr
@@ -81,7 +80,7 @@ export function ChordDiagram({ shape, instrument, size = 140 }: Props) {
           x2={padX + innerW}
           y1={fretY(i)}
           y2={fretY(i)}
-          stroke={stroke}
+          stroke="currentColor"
           strokeWidth={i === 0 && !showNut ? 1.5 : 1}
         />
       ))}
@@ -93,7 +92,7 @@ export function ChordDiagram({ shape, instrument, size = 140 }: Props) {
           x2={stringX(i)}
           y1={padTop}
           y2={padTop + innerH}
-          stroke={stroke}
+          stroke="currentColor"
           strokeWidth={1}
         />
       ))}
@@ -107,7 +106,7 @@ export function ChordDiagram({ shape, instrument, size = 140 }: Props) {
               y={padTop - 8}
               textAnchor="middle"
               fontSize="12"
-              fill={stroke}
+              fill="currentColor"
               fontFamily="ui-sans-serif, system-ui"
             >
               ×
@@ -122,7 +121,7 @@ export function ChordDiagram({ shape, instrument, size = 140 }: Props) {
               cy={padTop - 9}
               r={4}
               fill="none"
-              stroke={stroke}
+              stroke="currentColor"
               strokeWidth={1.2}
             />
           );
@@ -137,7 +136,7 @@ export function ChordDiagram({ shape, instrument, size = 140 }: Props) {
           width={stringX(shape.barre.to) - stringX(shape.barre.from) + 12}
           height={12}
           rx={6}
-          fill={stroke}
+          fill="currentColor"
           opacity={0.85}
         />
       )}
@@ -150,7 +149,7 @@ export function ChordDiagram({ shape, instrument, size = 140 }: Props) {
         const finger = shape.fingers?.[i];
         return (
           <g key={`d${i}`}>
-            <circle cx={cx} cy={cy} r={8.5} fill={stroke} />
+            <circle cx={cx} cy={cy} r={8.5} fill="currentColor" />
             {finger ? (
               <text
                 x={cx}
@@ -158,7 +157,7 @@ export function ChordDiagram({ shape, instrument, size = 140 }: Props) {
                 textAnchor="middle"
                 fontSize="10"
                 fontWeight="700"
-                fill="#fff"
+                fill="var(--bg)"
                 fontFamily="ui-sans-serif, system-ui"
               >
                 {finger}
