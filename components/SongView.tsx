@@ -6,7 +6,7 @@ import type { Song, Section } from "@/lib/chordpro";
 import { uniqueChords } from "@/lib/chordpro";
 import { type Instrument } from "@/lib/chord-shapes";
 import { getVoicings } from "@/lib/chords-db";
-import { filterLyrics } from "@/lib/parental-filter";
+import { FilteredText } from "./FilteredText";
 import { ChordDiagram } from "./ChordDiagram";
 import { ThemeToggle } from "./ThemeToggle";
 import { albumBySlug } from "@/lib/albums";
@@ -176,7 +176,7 @@ export function SongView({ song }: { song: Song }) {
         ))}
         {song.notes && (
           <p className="mt-8 text-sm italic text-[var(--muted)]">
-            {safe ? filterLyrics(song.notes) : song.notes}
+            <FilteredText text={song.notes} safe={safe} />
           </p>
         )}
       </main>
@@ -220,7 +220,9 @@ function SectionBlock({
           if (!hasChords) {
             return (
               <p key={li} className="leading-relaxed text-[var(--text)]">
-                {line.segments.map((s) => safe ? filterLyrics(s.text) : s.text).join("")}
+                {line.segments.map((s, si) => (
+                  <FilteredText key={si} text={s.text} safe={safe} />
+                ))}
               </p>
             );
           }
@@ -249,7 +251,6 @@ function InlineSegment({
 }: {
   chord?: string; text: string; safe: boolean; chordColor: string; onChordTap: (c: string) => void;
 }) {
-  const displayText = safe ? filterLyrics(text) : text;
   return (
     <span className="inline-flex flex-col items-start leading-none">
       {chord ? (
@@ -263,7 +264,9 @@ function InlineSegment({
       ) : (
         <span className="mb-0.5 block" style={{ height: "0.7em" }} aria-hidden />
       )}
-      <span className="text-[var(--text)]">{displayText || " "}</span>
+      <span className="text-[var(--text)]">
+        {text ? <FilteredText text={text} safe={safe} /> : " "}
+      </span>
     </span>
   );
 }
