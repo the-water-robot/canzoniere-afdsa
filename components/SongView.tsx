@@ -86,7 +86,7 @@ export function SongView({ song }: { song: Song }) {
                     : "text-[var(--muted)] hover:text-[var(--text)]")
                 }
               >
-                {inst === "guitar" ? "🎸" : "🪗"}
+                {inst === "guitar" ? "Chitarra" : "Ukulele"}
               </button>
             ))}
           </div>
@@ -239,7 +239,7 @@ function ChordSheet({
           <div>
             <div className="font-display text-3xl font-bold text-[var(--text)]">{name}</div>
             <div className="mt-0.5 font-mono text-[0.62rem] uppercase tracking-widest text-[var(--muted)]">
-              {instrument === "guitar" ? "Chitarra 🎸" : "Ukulele 🪗"}
+              {instrument === "guitar" ? "🎸 Chitarra" : "🎵 Ukulele"}
             </div>
           </div>
           <button
@@ -270,7 +270,7 @@ function ChordSheet({
           onClick={onSwitchInstrument}
           className="mt-4 w-full rounded-full bg-[var(--border)] px-4 py-2.5 text-sm font-semibold text-[var(--text)] transition hover:opacity-80"
         >
-          Mostra su {instrument === "guitar" ? "ukulele 🪗" : "chitarra 🎸"}
+          Mostra su {instrument === "guitar" ? "🎵 Ukulele" : "🎸 Chitarra"}
         </button>
       </div>
     </div>
