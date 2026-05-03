@@ -9,7 +9,9 @@
       "WebFetch(domain:open.spotify.com)",
       "WebSearch",
       "WebFetch(domain:www.kalporz.com)",
-      "Bash(pdftotext \"/Users/pit/dev/canzoniere/Gli Animali Fantastici del Sudamerica.pdf\" -)"
+      "Bash(pdftotext \"/Users/pit/dev/canzoniere/Gli Animali Fantastici del Sudamerica.pdf\" -)",
+      "Bash(grep -E \"^[A-Z][a-z]|[a-z]{4,}\")",
+      "Bash(python3 -c \"import fitz; print\\(fitz.__version__\\)\")"
     ]
   }
 }

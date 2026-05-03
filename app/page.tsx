@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { loadAlbums } from "@/lib/loader";
 import { AlbumSection } from "@/components/AlbumSection";
 import { ThemeToggle } from "@/components/ThemeToggle";
@@ -103,6 +104,14 @@ export default function Home() {
           </div>
           <p className="mt-4 text-center text-xs text-[var(--muted)]">
             lapostadelcuoredeglianimali@gmail.com
+          </p>
+          <p className="mt-6 text-center">
+            <Link
+              href="/about"
+              className="text-[0.65rem] uppercase tracking-[0.25em] text-[var(--muted)] transition hover:text-[var(--text)]"
+            >
+              Chi siamo
+            </Link>
           </p>
         </footer>
       </div>

@@ -7,6 +7,7 @@ import { uniqueChords } from "@/lib/chordpro";
 import { type Instrument, getChord } from "@/lib/chord-shapes";
 import { ChordDiagram } from "./ChordDiagram";
 import { ThemeToggle } from "./ThemeToggle";
+import { albumBySlug } from "@/lib/albums";
 
 // Per-kind accent colours (CSS variable names / tailwind classes)
 const KIND_LABEL: Record<string, string> = {
@@ -36,6 +37,7 @@ export function SongView({ song }: { song: Song }) {
 
   const chords = useMemo(() => uniqueChords(song), [song]);
   const scale  = 1 + fontStep * 0.1;
+  const album  = albumBySlug(song.albumSlug);
 
   return (
     <div className="scene-bg relative min-h-screen text-[var(--text)]">
@@ -136,6 +138,12 @@ export function SongView({ song }: { song: Song }) {
         ))}
         {song.notes && (
           <p className="mt-8 text-sm italic text-[var(--muted)]">{song.notes}</p>
+        )}
+
+        {album?.authors && (
+          <p className="mt-6 text-center text-[0.65rem] uppercase tracking-[0.22em] text-[var(--muted)]">
+            {album.title} · {album.authors}
+          </p>
         )}
       </main>
 
