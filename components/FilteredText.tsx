@@ -18,7 +18,7 @@ export function FilteredText({ text, safe }: { text: string; safe: boolean }) {
   );
 }
 
-function CorrectionPatch({ replacement }: { replacement: string }) {
+export function CorrectionPatch({ replacement }: { replacement: string }) {
   return (
     <span
       aria-label={replacement}
@@ -29,7 +29,7 @@ function CorrectionPatch({ replacement }: { replacement: string }) {
         transform: "rotate(-0.8deg)",
       }}
     >
-      {/* faint texture lines mimicking correction fluid */}
+      {/* faint texture mimicking correction fluid */}
       <span
         aria-hidden
         className="pointer-events-none absolute inset-0 rounded-[3px] opacity-20"
@@ -39,7 +39,7 @@ function CorrectionPatch({ replacement }: { replacement: string }) {
         }}
       />
       <span
-        className="relative italic"
+        className="relative"
         style={{
           color: "#1a3a8f",
           fontFamily: "cursive, ui-sans-serif",

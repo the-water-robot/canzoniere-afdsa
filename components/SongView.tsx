@@ -6,7 +6,8 @@ import type { Song, Section } from "@/lib/chordpro";
 import { uniqueChords } from "@/lib/chordpro";
 import { type Instrument } from "@/lib/chord-shapes";
 import { getVoicings } from "@/lib/chords-db";
-import { FilteredText } from "./FilteredText";
+import { FilteredText, CorrectionPatch } from "./FilteredText";
+import { filterLineSegments } from "@/lib/parental-filter";
 import { ChordDiagram } from "./ChordDiagram";
 import { ThemeToggle } from "./ThemeToggle";
 import { albumBySlug } from "@/lib/albums";
@@ -226,14 +227,15 @@ function SectionBlock({
               </p>
             );
           }
+          const segs = safe ? filterLineSegments(line.segments) : line.segments.map((s) => ({ ...s, patched: false as const }));
           return (
-            <div key={li} className="flex flex-wrap items-end leading-none">
-              {line.segments.map((seg, si) => (
+            <div key={li} className="flex flex-wrap leading-none" style={{ paddingTop: "1.3em" }}>
+              {segs.map((seg, si) => (
                 <InlineSegment
                   key={si}
                   chord={seg.chord}
                   text={seg.text}
-                  safe={safe}
+                  patched={"patched" in seg ? seg.patched : false}
                   chordColor={chordColor}
                   onChordTap={onChordTap}
                 />
@@ -247,25 +249,25 @@ function SectionBlock({
 }
 
 function InlineSegment({
-  chord, text, safe, chordColor, onChordTap,
+  chord, text, patched, chordColor, onChordTap,
 }: {
-  chord?: string; text: string; safe: boolean; chordColor: string; onChordTap: (c: string) => void;
+  chord?: string; text: string; patched: boolean; chordColor: string; onChordTap: (c: string) => void;
 }) {
   return (
-    <span className="inline-flex flex-col items-start leading-none">
-      {chord ? (
+    <span className="relative inline-block align-bottom">
+      {chord && (
         <button
           type="button"
           onClick={() => onChordTap(chord)}
-          className={`mb-0.5 font-mono text-[0.7em] font-bold transition hover:opacity-70 ${chordColor}`}
+          className={`absolute bottom-full left-0 mb-0.5 whitespace-nowrap font-mono text-[0.7em] font-bold transition hover:opacity-70 ${chordColor}`}
         >
           {chord}
         </button>
-      ) : (
-        <span className="mb-0.5 block" style={{ height: "0.7em" }} aria-hidden />
       )}
       <span className="text-[var(--text)]">
-        {text ? <FilteredText text={text} safe={safe} /> : " "}
+        {text
+          ? patched ? <CorrectionPatch replacement={text} /> : text
+          : " "}
       </span>
     </span>
   );
