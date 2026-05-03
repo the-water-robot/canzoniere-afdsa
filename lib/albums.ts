@@ -3,6 +3,8 @@ export type AlbumMeta = {
   title: string;
   emoji: string;
   description?: string;
+  cover?: string;
+  year?: string;
 };
 
 export const ALBUMS: AlbumMeta[] = [
@@ -10,13 +12,16 @@ export const ALBUMS: AlbumMeta[] = [
     slug: "dlin-dlon",
     title: "Dlin Dlon",
     emoji: "🔔",
-    description: "Il primo album",
+    description: "EP d'esordio · 2018",
+    cover: "/images/cover-dlindlon.jpg",
+    year: "2018",
   },
   {
     slug: "osteria",
     title: "Osteria",
     emoji: "🍷",
-    description: "Il secondo album",
+    description: "Secondo album",
+    cover: "/images/cover-osteria.jpg",
   },
   {
     slug: "inediti",
