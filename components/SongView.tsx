@@ -6,6 +6,7 @@ import type { Song, Section } from "@/lib/chordpro";
 import { uniqueChords } from "@/lib/chordpro";
 import { type Instrument } from "@/lib/chord-shapes";
 import { getVoicings } from "@/lib/chords-db";
+import { filterLyrics } from "@/lib/parental-filter";
 import { ChordDiagram } from "./ChordDiagram";
 import { ThemeToggle } from "./ThemeToggle";
 import { albumBySlug } from "@/lib/albums";
@@ -31,11 +32,24 @@ const KIND_CHORD: Record<string, string> = {
   outro:   "text-violet",
 };
 
+function readSafe(): boolean {
+  if (typeof window === "undefined") return true;
+  const v = localStorage.getItem("parental-control");
+  return v === null ? true : v === "true";
+}
+
 export function SongView({ song }: { song: Song }) {
   const [instrument, setInstrument] = useState<Instrument>("guitar");
   const [openChord, setOpenChord]   = useState<string | null>(null);
   const [voicingIdx, setVoicingIdx] = useState(0);
   const [fontStep,  setFontStep]    = useState(0);
+  const [safe,      setSafe]        = useState(readSafe);
+
+  const toggleSafe = () => setSafe((s) => {
+    const next = !s;
+    localStorage.setItem("parental-control", String(next));
+    return next;
+  });
 
   const handleOpenChord = (chord: string) => {
     setOpenChord(chord);
@@ -79,6 +93,24 @@ export function SongView({ song }: { song: Song }) {
               </div>
             )}
           </div>
+
+          {/* Parental control toggle */}
+          <button
+            type="button"
+            onClick={toggleSafe}
+            aria-pressed={safe}
+            aria-label={safe ? "Modalità famiglia attiva" : "Modalità famiglia disattiva"}
+            className={
+              "inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full transition " +
+              (safe
+                ? "text-lime hover:bg-[var(--border)]"
+                : "text-[var(--muted)] hover:bg-[var(--border)] hover:text-[var(--text)]")
+            }
+          >
+            <svg width="16" height="16" viewBox="0 0 24 24" fill={safe ? "currentColor" : "none"} stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+            </svg>
+          </button>
 
           <ThemeToggle />
         </div>
@@ -138,13 +170,15 @@ export function SongView({ song }: { song: Song }) {
           <SectionBlock
             key={idx}
             section={section}
+            safe={safe}
             onChordTap={handleOpenChord}
           />
         ))}
         {song.notes && (
-          <p className="mt-8 text-sm italic text-[var(--muted)]">{song.notes}</p>
+          <p className="mt-8 text-sm italic text-[var(--muted)]">
+            {safe ? filterLyrics(song.notes) : song.notes}
+          </p>
         )}
-
       </main>
 
       {openChord && (
@@ -164,9 +198,13 @@ export function SongView({ song }: { song: Song }) {
   );
 }
 
-function SectionBlock({ section, onChordTap }: { section: Section; onChordTap: (c: string) => void }) {
-  const label     = KIND_LABEL[section.kind] ?? "text-[var(--muted)]";
-  const bg        = KIND_BG[section.kind]    ?? "";
+function SectionBlock({
+  section, safe, onChordTap,
+}: {
+  section: Section; safe: boolean; onChordTap: (c: string) => void;
+}) {
+  const label      = KIND_LABEL[section.kind] ?? "text-[var(--muted)]";
+  const bg         = KIND_BG[section.kind]    ?? "";
   const chordColor = KIND_CHORD[section.kind] ?? "text-flamingo";
 
   return (
@@ -182,7 +220,7 @@ function SectionBlock({ section, onChordTap }: { section: Section; onChordTap: (
           if (!hasChords) {
             return (
               <p key={li} className="leading-relaxed text-[var(--text)]">
-                {line.segments.map((s) => s.text).join("")}
+                {line.segments.map((s) => safe ? filterLyrics(s.text) : s.text).join("")}
               </p>
             );
           }
@@ -193,6 +231,7 @@ function SectionBlock({ section, onChordTap }: { section: Section; onChordTap: (
                   key={si}
                   chord={seg.chord}
                   text={seg.text}
+                  safe={safe}
                   chordColor={chordColor}
                   onChordTap={onChordTap}
                 />
@@ -206,10 +245,11 @@ function SectionBlock({ section, onChordTap }: { section: Section; onChordTap: (
 }
 
 function InlineSegment({
-  chord, text, chordColor, onChordTap,
+  chord, text, safe, chordColor, onChordTap,
 }: {
-  chord?: string; text: string; chordColor: string; onChordTap: (c: string) => void;
+  chord?: string; text: string; safe: boolean; chordColor: string; onChordTap: (c: string) => void;
 }) {
+  const displayText = safe ? filterLyrics(text) : text;
   return (
     <span className="inline-flex flex-col items-start leading-none">
       {chord ? (
@@ -223,7 +263,7 @@ function InlineSegment({
       ) : (
         <span className="mb-0.5 block" style={{ height: "0.7em" }} aria-hidden />
       )}
-      <span className="text-[var(--text)]">{text || " "}</span>
+      <span className="text-[var(--text)]">{displayText || " "}</span>
     </span>
   );
 }
