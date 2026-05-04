@@ -229,7 +229,7 @@ function SectionBlock({
           }
           const segs = safe ? filterLineSegments(line.segments) : line.segments.map((s) => ({ ...s, patched: false as const }));
           return (
-            <div key={li} className="flex flex-wrap leading-none" style={{ paddingTop: "1.3em" }}>
+            <div key={li} className="flex flex-wrap items-end leading-none">
               {segs.map((seg, si) => (
                 <InlineSegment
                   key={si}
@@ -254,20 +254,24 @@ function InlineSegment({
   chord?: string; text: string; patched: boolean; chordColor: string; onChordTap: (c: string) => void;
 }) {
   return (
-    <span className="relative inline-block align-bottom">
-      {chord && (
+    // Column width = text width only; chord uses w-0 so it doesn't expand the column.
+    <span className="inline-flex flex-col items-start leading-none">
+      {chord ? (
         <button
           type="button"
           onClick={() => onChordTap(chord)}
-          className={`absolute bottom-full left-0 mb-0.5 whitespace-nowrap font-mono text-[0.7em] font-bold transition hover:opacity-70 ${chordColor}`}
+          className={`mb-0.5 w-0 overflow-visible whitespace-nowrap font-mono text-[0.7em] font-bold transition hover:opacity-70 ${chordColor}`}
         >
           {chord}
         </button>
+      ) : (
+        <span className="mb-0.5 block" style={{ height: "0.7em" }} aria-hidden />
       )}
-      <span className="text-[var(--text)]">
+      {/* whitespace-pre-wrap prevents trailing spaces from being collapsed */}
+      <span className="whitespace-pre-wrap text-[var(--text)]">
         {text
           ? patched ? <CorrectionPatch replacement={text} /> : text
-          : " "}
+          : "\u00a0"}
       </span>
     </span>
   );
