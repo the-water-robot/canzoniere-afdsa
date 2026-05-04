@@ -1,5 +1,7 @@
 # Canzoniere — Gli Animali Fantastici del Sud America
 
+**[canzoniere-afdsa.vercel.app](https://canzoniere-afdsa.vercel.app/)**
+
 Canzoniere digitale mobile-first per **Gli Animali Fantastici del Sud America**. Testi e accordi per chitarra e ukulele, con diagrammi SVG interattivi, dark mode, filtro parolacce e protezione per canzoni inedite.
 
 ## Stack
