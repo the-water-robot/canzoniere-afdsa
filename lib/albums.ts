@@ -31,6 +31,7 @@ export const ALBUMS: AlbumMeta[] = [
     title: "Fondi di cassetto e altri sogni",
     emoji: "🗄️",
     description: "Canzoni in cantiere",
+    cover: "/images/cover-inediti.jpg",
     authors: "Ilacqua P., Piotti D.",
   },
 ];

@@ -112,7 +112,7 @@ export default function AboutPage() {
         <section className="mt-10">
           <h2 className="mb-4 font-display text-xl font-bold">💿 Discografia</h2>
           <ul className="space-y-3">
-            {ALBUMS.map((a) => (
+            {ALBUMS.filter((a) => a.slug !== "inediti").map((a) => (
               <li
                 key={a.slug}
                 className="glass flex items-center gap-3 rounded-xl px-4 py-3"
