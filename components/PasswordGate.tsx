@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { useRouter } from "next/navigation";
 import type { Song } from "@/lib/chordpro";
 import { SongView } from "./SongView";
 
@@ -16,6 +17,7 @@ function hashPassword(s: string): string {
 
 export function PasswordGate({ song }: { song: Song }) {
   const storageKey = `unlocked_${song.slug}`;
+  const router = useRouter();
 
   const [unlocked, setUnlocked] = useState(false);
   const [input, setInput] = useState("");
@@ -67,6 +69,14 @@ export function PasswordGate({ song }: { song: Song }) {
           className="w-full rounded-full bg-flamingo px-4 py-2.5 text-sm font-bold text-white transition hover:opacity-90 active:scale-95"
         >
           Entra
+        </button>
+
+        <button
+          type="button"
+          onClick={() => router.back()}
+          className="mt-3 w-full rounded-full px-4 py-2 text-sm text-[var(--muted)] transition hover:text-[var(--text)]"
+        >
+          ← Indietro
         </button>
       </div>
     </div>
