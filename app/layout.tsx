@@ -8,10 +8,19 @@ export const metadata: Metadata = {
   applicationName: "Canzoniere",
   formatDetection: { telephone: false, email: false, address: false },
   icons: {
-    icon: "/logo/favicon.svg",
-    shortcut: "/logo/favicon.svg",
-    apple: "/logo/favicon.svg",
+    icon: [
+      { url: "/favicon.ico",        sizes: "32x32",   type: "image/x-icon" },
+      { url: "/logo/favicon.svg",   sizes: "any",     type: "image/svg+xml" },
+      { url: "/logo/icon-192.png",  sizes: "192x192", type: "image/png" },
+      { url: "/logo/icon-512.png",  sizes: "512x512", type: "image/png" },
+    ],
+    // iOS "Add to Home Screen" — must be PNG, not SVG
+    apple: [
+      { url: "/logo/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
+    ],
+    shortcut: "/favicon.ico",
   },
+  manifest: "/site.webmanifest",
 };
 
 export const viewport: Viewport = {
