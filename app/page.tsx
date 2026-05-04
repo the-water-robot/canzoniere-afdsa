@@ -25,18 +25,6 @@ export default function Home() {
 
       <div className="relative mx-auto max-w-lg px-5 pb-24 pt-12">
 
-        {/* Brand logo */}
-        <div className="mx-auto mb-6 flex h-20 w-20 items-center justify-center rounded-3xl bg-white/10 shadow-2xl">
-          <Image
-            src="/logo/logo.svg"
-            alt="Logo Canzoniere"
-            width={64}
-            height={64}
-            className="h-12 w-12"
-            priority
-          />
-        </div>
-
         {/* Hero band image */}
         <div className="relative mb-8 overflow-hidden rounded-2xl shadow-2xl">
           <Image

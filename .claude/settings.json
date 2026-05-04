@@ -11,7 +11,9 @@
       "WebFetch(domain:www.kalporz.com)",
       "Bash(pdftotext \"/Users/pit/dev/canzoniere/Gli Animali Fantastici del Sudamerica.pdf\" -)",
       "Bash(grep -E \"^[A-Z][a-z]|[a-z]{4,}\")",
-      "Bash(python3 -c \"import fitz; print\\(fitz.__version__\\)\")"
+      "Bash(python3 -c \"import fitz; print\\(fitz.__version__\\)\")",
+      "Bash(node -e \"const g = require\\('@tombatossals/chords-db/lib/guitar.json'\\); console.log\\(Object.keys\\(g.chords\\).slice\\(0,10\\)\\); console.log\\(JSON.stringify\\(g.chords.C[0]\\)\\)\")",
+      "Bash(node -e ' *)"
     ]
   }
 }
