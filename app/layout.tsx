@@ -7,6 +7,11 @@ export const metadata: Metadata = {
   description: "Canzoniere con accordi per chitarra e ukulele.",
   applicationName: "Canzoniere",
   formatDetection: { telephone: false, email: false, address: false },
+  icons: {
+    icon: "/logo/favicon.svg",
+    shortcut: "/logo/favicon.svg",
+    apple: "/logo/favicon.svg",
+  },
 };
 
 export const viewport: Viewport = {
