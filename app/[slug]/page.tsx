@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 import { SongView } from "@/components/SongView";
+import { PasswordGate } from "@/components/PasswordGate";
 import { loadAllSongs, loadSong } from "@/lib/loader";
 
 export function generateStaticParams() {
@@ -28,5 +29,7 @@ export default async function SongPage({
   const { slug } = await params;
   const song = loadSong(slug);
   if (!song) notFound();
-  return <SongView song={song} />;
+  return song.passwordHash
+    ? <PasswordGate song={song} />
+    : <SongView song={song} />;
 }

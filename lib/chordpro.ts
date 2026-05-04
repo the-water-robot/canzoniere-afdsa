@@ -30,6 +30,7 @@ export type Song = {
   number: string;
   key?: string;
   notes?: string;
+  passwordHash?: string;
   sections: Section[];
 };
 
@@ -110,6 +111,7 @@ export function parseChordPro(source: string, filename: string): Omit<Song, "slu
   let number = "";
   let key: string | undefined;
   let notes: string | undefined;
+  let passwordHash: string | undefined;
 
   const sections: Section[] = [];
   let currentSection: Section | null = null;
@@ -130,6 +132,7 @@ export function parseChordPro(source: string, filename: string): Omit<Song, "slu
       if (k === "emoji") { emoji = v; continue; }
       if (k === "number") { number = v; continue; }
       if (k === "notes") { notes = v; continue; }
+      if (k === "password") { passwordHash = simpleHash(v); continue; }
 
       if (SECTION_CLOSE.has(k)) {
         currentSection = null;
@@ -161,7 +164,18 @@ export function parseChordPro(source: string, filename: string): Omit<Song, "slu
     currentSection.lines.push(parseLine(line));
   }
 
-  return { title, emoji, number, key, notes, sections };
+  return { title, emoji, number, key, notes, passwordHash, sections };
+}
+
+// Deterministic hash used server-side only — maps plaintext password to hex string.
+// Client receives only the hash, never the plaintext.
+function simpleHash(s: string): string {
+  let h = 0x811c9dc5;
+  for (let i = 0; i < s.length; i++) {
+    h ^= s.charCodeAt(i);
+    h = (Math.imul(h, 0x01000193) >>> 0);
+  }
+  return h.toString(16).padStart(8, "0");
 }
 
 export function uniqueChords(song: Song): string[] {

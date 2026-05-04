@@ -28,9 +28,9 @@ export const ALBUMS: AlbumMeta[] = [
   },
   {
     slug: "inediti",
-    title: "Inediti",
-    emoji: "✏️",
-    description: "Canzoni inedite",
+    title: "Fondi di cassetto e altri sogni",
+    emoji: "🗄️",
+    description: "Canzoni in cantiere",
     authors: "Ilacqua P., Piotti D.",
   },
 ];
