@@ -57,7 +57,7 @@ export default function AboutPage() {
           Gli Animali Fantastici del Sud America
         </h1>
         <p className="mb-10 text-sm uppercase tracking-[0.25em] text-[var(--muted)]">
-          Dal 2015, da Milano al mondo
+          Dal 2017, da Milano al mondo
         </p>
 
         {/* Bio */}
