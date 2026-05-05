@@ -116,37 +116,27 @@ export function SongView({ song }: { song: Song }) {
           <ThemeToggle />
         </div>
 
-        {/* Chord strip + instrument toggle */}
-        <div className="mx-auto flex max-w-2xl items-center gap-1.5 overflow-x-auto px-3 pb-2.5 scrollbar-none">
-          {chords.map((c) => (
-            <button
-              key={c}
-              type="button"
-              onClick={() => handleOpenChord(c)}
-              className="shrink-0 rounded-full bg-flamingo/10 px-2.5 py-0.5 font-mono text-sm font-bold text-flamingo ring-1 ring-flamingo/25 transition hover:bg-flamingo/20"
-            >
-              {c}
-            </button>
-          ))}
-          <div className="ml-auto flex shrink-0 items-center gap-1.5 pl-2">
-            <div className="inline-flex rounded-full bg-[var(--border)] p-0.5 text-xs font-semibold">
-              {(["guitar", "ukulele"] as Instrument[]).map((inst) => (
-                <button
-                  key={inst}
-                  type="button"
-                  onClick={() => setInstrument(inst)}
-                  aria-pressed={instrument === inst}
-                  className={
-                    "rounded-full px-2.5 py-1 transition " +
-                    (instrument === inst
-                      ? "bg-[var(--bg)] text-[var(--text)] shadow-sm"
-                      : "text-[var(--muted)] hover:text-[var(--text)]")
-                  }
-                >
-                  {inst === "guitar" ? "Chitarra" : "Ukulele"}
-                </button>
-              ))}
-            </div>
+        {/* Controls row: instrument toggle + font size */}
+        <div className="mx-auto flex max-w-2xl items-center gap-2 px-3 pb-1.5">
+          <div className="inline-flex rounded-full bg-[var(--border)] p-0.5 text-xs font-semibold">
+            {(["guitar", "ukulele"] as Instrument[]).map((inst) => (
+              <button
+                key={inst}
+                type="button"
+                onClick={() => setInstrument(inst)}
+                aria-pressed={instrument === inst}
+                className={
+                  "rounded-full px-2.5 py-1 transition " +
+                  (instrument === inst
+                    ? "bg-[var(--bg)] text-[var(--text)] shadow-sm"
+                    : "text-[var(--muted)] hover:text-[var(--text)]")
+                }
+              >
+                {inst === "guitar" ? "Chitarra" : "Ukulele"}
+              </button>
+            ))}
+          </div>
+          <div className="flex items-center gap-1">
             {([["−", -1], ["+", 1]] as [string, number][]).map(([lbl, d]) => (
               <button
                 key={lbl}
@@ -159,6 +149,20 @@ export function SongView({ song }: { song: Song }) {
               </button>
             ))}
           </div>
+        </div>
+
+        {/* Chord pills row */}
+        <div className="mx-auto flex max-w-2xl gap-1.5 overflow-x-auto px-3 pb-2.5 scrollbar-none">
+          {chords.map((c) => (
+            <button
+              key={c}
+              type="button"
+              onClick={() => handleOpenChord(c)}
+              className="shrink-0 rounded-full bg-flamingo/10 px-2.5 py-0.5 font-mono text-sm font-bold text-flamingo ring-1 ring-flamingo/25 transition hover:bg-flamingo/20"
+            >
+              {c}
+            </button>
+          ))}
         </div>
       </header>
 
@@ -229,7 +233,7 @@ function SectionBlock({
           }
           const segs = safe ? filterLineSegments(line.segments) : line.segments.map((s) => ({ ...s, patched: false as const }));
           return (
-            <div key={li} className="flex flex-wrap items-start leading-none">
+            <div key={li} className="flex flex-wrap items-end leading-none">
               {segs.map((seg, si) => (
                 <InlineSegment
                   key={si}
@@ -255,23 +259,23 @@ function InlineSegment({
 }) {
   return (
     <span className="inline-flex flex-col items-start leading-none">
+      {chord ? (
+        <button
+          type="button"
+          onClick={() => onChordTap(chord)}
+          className={`mb-0.5 w-0 overflow-visible whitespace-nowrap font-mono text-[0.7em] font-bold transition hover:opacity-70 ${chordColor}`}
+        >
+          {chord}
+        </button>
+      ) : (
+        <span className="mb-0.5 block" style={{ height: "0.7em" }} aria-hidden />
+      )}
       {/* whitespace-pre-wrap prevents trailing spaces from being collapsed */}
       <span className="whitespace-pre-wrap text-[var(--text)]">
         {text
           ? patched ? <CorrectionPatch replacement={text} /> : text
           : "\u00a0"}
       </span>
-      {chord ? (
-        <button
-          type="button"
-          onClick={() => onChordTap(chord)}
-          className={`mt-0.5 w-0 overflow-visible whitespace-nowrap font-mono text-[0.7em] font-bold transition hover:opacity-70 ${chordColor}`}
-        >
-          {chord}
-        </button>
-      ) : (
-        <span className="mt-0.5 block" style={{ height: "0.7em" }} aria-hidden />
-      )}
     </span>
   );
 }
