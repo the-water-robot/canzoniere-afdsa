@@ -1,26 +1,27 @@
 {title: Hermano}
 {emoji: 🤝}
 {number: 04}
+{key: G}
 {password: hermano}
 
 {start_of_verse: Strofa}
-Amara solitudine, ciao malinconia
-le onde m'incanto che il tempo vola via
-e le anime son tante e i sogni libertà
-e perdersi nel mondo un'opportunità
-Fiesta! 
+[G]Amara solitudine, ciao malinconia
+[Em]le onde m'incanto che il tempo vola via
+[C]e le anime son tante e i sogni libertà
+[D]e perdersi nel mondo un'opportunità
+[G]Fiesta!
 Un tuffo nell'umanità!
-Tequila!
+[D]Tequila!
 {end_of_verse}
 
 {start_of_chorus: Ritornello}
-O hermano!
+[G]O hermano!
 ti sento mi Hermano!
-Carramba!
+[C]Carramba!
 La vita è muy stramba
-O hermano!
+[G]O hermano!
 ti sento mi Hermano!
-Carramba!
+[D]Carramba!
 La vita è muy stramba
 {end_of_chorus}
 
@@ -29,9 +30,9 @@ La vita è muy stramba
 {end_of_bridge}
 
 {start_of_verse: Strofa}
-E quando arriva el frio alla playa
-el ritmo caliente
-la noche se baila
+[G]E quando arriva el frio alla playa
+[C]el ritmo caliente
+[D]la noche se baila
 E quando arriva el frio alla playa
 el ritmo caliente
 la noche se baila
@@ -44,19 +45,19 @@ la noche se baila
 {end_of_verse}
 
 {start_of_chorus: Ritornello}
-O hermano!
+[G]O hermano!
 ti sento mi Hermano!
-Carramba!
+[C]Carramba!
 La vita è muy stramba
-O hermano!
+[G]O hermano!
 ti sento mi Hermano!
-Carramba!
+[D]Carramba!
 La vita è muy stramba
 {end_of_chorus}
 
 {start_of_outro: Rito}
-e quando arriba
-Carramba
-o Hermano
-La noche se baila
+[G]e quando arriba
+[D]Carramba
+[G]o Hermano
+[C]La noche se baila
 {end_of_outro}

@@ -1,89 +1,90 @@
 {title: Mr. Kebab}
 {emoji: 🥙}
 {number: 01}
+{key: C}
 {password: kebab}
 
 {start_of_verse: Strofa}
-A nord di Milano (a Milano nord)
+[C]A nord di Milano (a Milano nord)
 c'è un quartiere strano
-tra Turro e Loreto
+[Am]tra Turro e Loreto
 fermata della metro (Loreto, fermata Loreto)
-abita un signore che fa un mestiere
+[F]abita un signore che fa un mestiere
 lavora tante ore davanti al calore di uno spiedo di carne
-rotante
+[G]rotante
 di kebab
-lui è Mister Kebab
+[C]lui è Mister Kebab
 viene dall'Egitto dei faraoni in Stargate
-vende anche fritto e Peroni da 66
-per pochi sghei
+[F]vende anche fritto e Peroni da 66
+[G]per pochi sghei
 
 (perché)
 {end_of_verse}
 
 {start_of_bridge: Pre-ritornello}
-La concorrenza è tanta
+[C]La concorrenza è tanta
 non è abbastanza un euro e 50 a kebab
-per le velleità
+[Am]per le velleità
 serve un'altra attività
 
-c'è chi sogna il Bari in serie A
+[C]c'è chi sogna il Bari in serie A
 c'è chi vuole aprire un cocktail bar
-c'è chi è tanto bello vuole fare il modello
+[Am]c'è chi è tanto bello vuole fare il modello
 chi invece il monello con il pennello
-e anche a Mister Kebab
+[F]e anche a Mister Kebab
 piace sognare
-che un giorno riuscirà
+[G]che un giorno riuscirà
 ad avere i soldi per andare a vedere l'opera
 alla prima del teatro della Scala
 {end_of_bridge}
 
 {start_of_chorus: Ritornello}
 (ma)
-Mr. Kebab spaccia felicità nella notte
+[C]Mr. Kebab spaccia felicità nella notte
 nella notte
-Mr. Kebab spaccia felicità nella notte
-nella notte in via Arquà
+[F]Mr. Kebab spaccia felicità nella notte
+[G]nella notte
 {end_of_chorus}
 
 {start_of_verse: Strofa}
-La felicità
+[C]La felicità
 è un bicchiere di vino con un panino piadina kebab
-La felicità
+[F]La felicità
 è abbracciarsi un pò brillo assieme a tuo figlio Marika
-che anche lei lavora di notte per strada come suo papà
+[C]che anche lei lavora di notte per strada come suo papà
 e anche lei ha un sogno che un giorno riuscirà
-a realizzare, perché non smette mai di sognare,
-e anche voi gente, non smettete mai di sognare
+[Am]a realizzare, perché non smette mai di sognare,
+[G]e anche voi gente, non smettete mai di sognare
 
 (ma)
 {end_of_verse}
 
 {start_of_bridge: Pre-ritornello}
-La concorrenza è tanta
+[C]La concorrenza è tanta
 non è abbastanza un euro e 50 a kebab
-per le velleità
+[Am]per le velleità
 serve un'altra attività
 
-c'è chi sogna il Bari in serie A
+[C]c'è chi sogna il Bari in serie A
 c'è chi vuole aprire un cocktail bar
-c'è chi è tanto bello vuole fare il modello
+[Am]c'è chi è tanto bello vuole fare il modello
 chi invece il monello con il pennello
-e anche a Mister Kebab
+[F]e anche a Mister Kebab
 piace sognare
-che un giorno riuscirà
+[G]che un giorno riuscirà
 ad avere i soldi per andare a vedere l'opera
 alla prima del teatro della Scala
 {end_of_bridge}
 
 {start_of_chorus: Ritornello}
 (ma)
-Mr. Kebab spaccia felicità nella notte
+[C]Mr. Kebab spaccia felicità nella notte
 nella notte
-Mr. Kebab spaccia felicità nella notte
-nella notte in via Arquà
+[F]Mr. Kebab spaccia felicità nella notte
+[G]nella notte
 {end_of_chorus}
 
 {start_of_outro: Finale}
-Mr. Kebab spaccia felicità nella notte
-nella notte in via Arquà
+[C]Mr. Kebab spaccia felicità nella notte
+[G]nella notte
 {end_of_outro}

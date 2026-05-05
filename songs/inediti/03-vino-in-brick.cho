@@ -1,27 +1,28 @@
 {title: Vino in Brick}
 {emoji: 🧃}
 {number: 03}
+{key: G}
 {password: vino}
 
 {start_of_verse: Strofa}
-sopra la Sen, oh ma Moiselle
-la Tour Eiffel, lè proprio bell
-sbocciai Bordeaux, 
+[G]sopra la Sen, oh ma Moiselle
+[Em]la Tour Eiffel, lè proprio bell
+[C]sbocciai Bordeaux,
 per aperò, però
-la burla giù
+[D]la burla giù
 {end_of_verse}
 
 {start_of_verse: Strofa}
-Vidi un clochard, mi disse così:
-"Oh, mes amis, la vies è fantastique
-la vis è magnifique
-col vino in brick"
+[G]Vidi un clochard, mi disse così:
+[Em]"Oh, mes amis, la vies è fantastique
+[C]la vis è magnifique
+[G]col vino in brick"
 {end_of_verse}
 
 {start_of_chorus: Ritornello}
-C'est fantastique, c'est magnifique
-oh, mes amis
-il vino in brick!
+[G]C'est fantastique, c'est magnifique
+[C]oh, mes amis
+[D]il vino in brick!
 {end_of_chorus}
 
 {start_of_bridge: Solo}
@@ -29,18 +30,18 @@ il vino in brick!
 {end_of_bridge}
 
 {start_of_verse: Strofa — tipo Strokes}
-Il vino in brick oh 
+[G]Il vino in brick oh
 {end_of_verse}
 
 {start_of_verse: Strofa — tipo Ramones}
-Il vino in brick oh
+[G]Il vino in brick oh
 {end_of_verse}
 
 {start_of_verse: Strofa — tipo Beatles}
-Voilà!
-Il vino in brick oh
+[C]Voilà!
+[G]Il vino in brick oh
 {end_of_verse}
 
 {start_of_outro: Finale — di nuovo Ramones}
-Il vino in brick oh
+[G]Il vino in brick oh
 {end_of_outro}

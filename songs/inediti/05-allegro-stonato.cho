@@ -1,79 +1,80 @@
 {title: Allegro Stonato}
 {emoji: 🎶}
 {number: 05}
+{key: C}
 {password: stonato}
 
 {start_of_verse: Strofa}
-Cammino per la strada sotto il sole
+[C]Cammino per la strada sotto il sole
 fresco come il mare
-leggero come il cielo
+[Am]leggero come il cielo
 
-mi slaccio 2 bottoni dai polmoni
-che voglio respirareeeee
+[C]mi slaccio 2 bottoni dai polmoni
+[F]che voglio respirareeeee
 papapapapaapapa
 
-Giovane il giorno che mi guarda
+[C]Giovane il giorno che mi guarda
 sbirciando da una palma
-la mia camicia bianca
+[Am]la mia camicia bianca
 
-Giovane la notte che fibrilla
+[C]Giovane la notte che fibrilla
 si sta ancora truccando
-mette una luna gialla
+[F]mette una luna gialla
 
-e ora che viene sera
+[C]e ora che viene sera
 una chitarra suona
-ho voglia di cantare
+[G]ho voglia di cantare
 anche se non son buono
 {end_of_verse}
 
 {start_of_chorus: Ritornello}
-Eh oh
+[C]Eh oh
 e non mi importa niente
-e canto controvento
-la gente non mi sente
+[F]e canto controvento
+[G]la gente non mi sente
 
-Eh oh
+[C]Eh oh
 e non mi importa niente
-oh nooooo oh nooooo
-paraparapa
+[Am]oh nooooo oh nooooo
+[G]paraparapa
 {end_of_chorus}
 
 {start_of_verse: Strofa}
-Canto come un matto a squarciagola
+[C]Canto come un matto a squarciagola
 tengo la bocca sana
-con baci, rum e cola
+[F]con baci, rum e cola
 
-Le onde sugli spalti degli ormeggi lanciano ola
+[C]Le onde sugli spalti degli ormeggi lanciano ola
 
-Alle luci dei lampioni che fan pace
+[Am]Alle luci dei lampioni che fan pace
 coi fari delle vele
-che tornano nel porto a far l'amore
+[F]che tornano nel porto a far l'amore
 
-Mentre balla tutto quanto il malecon
+[C]Mentre balla tutto quanto il malecon
 malecon
-e vibra tutto quanto il corazon
+[Am]e vibra tutto quanto il corazon
 corazon
 
-e sotto questa luna
+[F]e sotto questa luna
 una chitarra suona
-ho voglia di cantare
+[G]ho voglia di cantare
 {end_of_verse}
 
 {start_of_chorus: Ritornello}
-Eh oh
+[C]Eh oh
 e non mi importa niente
-e canto controvento
-la gente non mi sente
+[F]e canto controvento
+[G]la gente non mi sente
 
-Eh oh
+[C]Eh oh
 e non mi importa niente
-oh nooooo oh nooooo
-paraparapa
+[Am]oh nooooo oh nooooo
+[G]paraparapa
 {end_of_chorus}
 
 {start_of_chorus: Ritornello}
-Eh oh
+[C]Eh oh
 facciamo dondolare il mondo
-tra il bagnasciuga e l'infinito
-paraparappa
+[F]tra il bagnasciuga e l'infinito
+[G]paraparappa
 {end_of_chorus}
