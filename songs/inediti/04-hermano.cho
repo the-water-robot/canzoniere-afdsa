@@ -4,5 +4,35 @@
 {password: hermano}
 
 {start_of_verse: Strofa}
-(testo in arrivo)
+Amara solitudine, ciao malinconia
+le onde m'incanto che il tempo vola via
+e le anime son tante e i sogni libertà
+e perdersi nel mondo un'opportunità
 {end_of_verse}
+
+{start_of_bridge: Pre-ritornello}
+Fiesta! Un tuffone, l'umanità!
+Tequila!
+{end_of_bridge}
+
+{start_of_chorus: Ritornello}
+O hermano!
+{end_of_chorus}
+
+{start_of_bridge: Chill out — tromba}
+*(chill out con la tromba)*
+{end_of_bridge}
+
+{start_of_verse: Strofa}
+E quando arriva el frio alla playa
+el ritmo caliente
+la noche se baila
+{end_of_verse}
+
+{start_of_chorus: Ritornello}
+O hermano!
+{end_of_chorus}
+
+{start_of_outro: Rito}
+O hermano!
+{end_of_outro}
