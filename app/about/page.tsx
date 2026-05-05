@@ -111,25 +111,32 @@ export default function AboutPage() {
         {/* Discografia */}
         <section className="mt-10">
           <h2 className="mb-4 font-display text-xl font-bold">💿 Discografia</h2>
-          <ul className="space-y-3">
+          <ul className="space-y-4">
             {ALBUMS.filter((a) => a.slug !== "inediti").map((a) => (
               <li
                 key={a.slug}
-                className="glass flex items-center gap-3 rounded-xl px-4 py-3"
+                className="glass flex items-center gap-4 rounded-2xl p-3"
               >
-                <span className="text-2xl">{a.emoji}</span>
+                {a.cover ? (
+                  <div className="relative h-20 w-20 shrink-0 overflow-hidden rounded-xl shadow-md">
+                    <Image
+                      src={a.cover}
+                      alt={a.title}
+                      fill
+                      className="object-cover"
+                      sizes="80px"
+                    />
+                  </div>
+                ) : (
+                  <span className="text-3xl">{a.emoji}</span>
+                )}
                 <div className="flex-1">
                   <div className="font-display text-base font-semibold">
                     {a.title}
                   </div>
-                  {a.description && (
-                    <div className="text-xs text-[var(--muted)]">
-                      {a.description}
-                    </div>
-                  )}
-                  {a.authors && (
-                    <div className="mt-0.5 text-[0.65rem] uppercase tracking-widest text-[var(--muted)]">
-                      {a.authors}
+                  {a.year && (
+                    <div className="mt-0.5 font-mono text-xs text-[var(--muted)]">
+                      {a.year}
                     </div>
                   )}
                 </div>

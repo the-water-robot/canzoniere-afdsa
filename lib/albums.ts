@@ -24,6 +24,7 @@ export const ALBUMS: AlbumMeta[] = [
     emoji: "🍷",
     description: "Secondo album",
     cover: "/images/cover-osteria.jpg",
+    year: "2021",
     authors: "Ilacqua P., Piotti D., Pruneddu D.",
   },
   {
