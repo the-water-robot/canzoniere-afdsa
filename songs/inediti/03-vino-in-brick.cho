@@ -4,5 +4,42 @@
 {password: vino}
 
 {start_of_verse: Strofa}
-(testo in arrivo)
+Sulla Senna, oh, ma, Moselle
+la Tour Eiffel, proprio bella
+sboccia i Bordeaux, però, però
+la burla giù
 {end_of_verse}
+
+{start_of_verse: Strofa}
+Vide un crochet, mi disse così:
+"Oh, mes amis, la vie è fantastica
+la vie è magnifica
+col vino in brick"
+{end_of_verse}
+
+{start_of_chorus: Ritornello}
+C'est fantastique, c'est magnifique
+oh, mes amis
+il vino in brick!
+{end_of_chorus}
+
+{start_of_bridge: Solo}
+*(assolo)*
+{end_of_bridge}
+
+{start_of_verse: Strofa — tipo Strokes}
+Il vino in brick
+{end_of_verse}
+
+{start_of_verse: Strofa — tipo Ramones}
+Il vino in bricco
+{end_of_verse}
+
+{start_of_verse: Strofa — tipo Beatles}
+Voilà!
+Il vino in bricco
+{end_of_verse}
+
+{start_of_outro: Finale — di nuovo Ramones}
+Il vino in bricco
+{end_of_outro}
