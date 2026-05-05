@@ -1,44 +1,45 @@
 {title: Osteria}
 {emoji: 🍷}
 {number: 01}
+{key: G}
 
 {start_of_chorus: Ritornello}
-All'Osteria vieni a mangiare
-ottimi pasti a prezzo popolare
+[G]All'Osteria vieni a mangiare
+[C]ottimi pasti a prezzo popolare
 
-All'Osteria vieni a bere
-e lascia a casa i pensieri del mestiere
+[G]All'Osteria vieni a bere
+[D]e lascia a casa i pensieri del mestiere
 {end_of_chorus}
 
 {start_of_verse: Strofa}
-All'Osteria si ascoltan storie
+[G]All'Osteria si ascoltan storie
 racconti, avventure
-di amori di sogni di notti di viaggi
+[Em]di amori di sogni di notti di viaggi
 sperduti in terre lontane
-di maghi esploratori arbusti ed animali
+[C]di maghi esploratori arbusti ed animali
 fantastici oppure normali
-di re e di pastori baristi e spacciatori
-romantici e suonatori
+[G]di re e di pastori baristi e spacciatori
+[D]romantici e suonatori
 {end_of_verse}
 
 {start_of_chorus: Ritornello}
-All'Osteria vieni a suonare
+[G]All'Osteria vieni a suonare
 All'Osteria vieni a ballare
 
-All'Osteria si canta in coro
+[C]All'Osteria si canta in coro
 canzoni sporche di pomodoro
 
-All'Osteria si fa gran festa
-se cerchi il bagno è in fondo sulla destra
+[G]All'Osteria si fa gran festa
+[D]se cerchi il bagno è in fondo sulla destra
 {end_of_chorus}
 
 {start_of_chorus: Finale}
-All'Osteria c'è bella compagnia
+[G]All'Osteria c'è bella compagnia
 no non andare via no non andare via
 
-E se te ne vai
-Dimmi che tornerai
+[Em]E se te ne vai
+[D]dimmi che tornerai
 
-all'Osteria all'Osteria
-all'osteria…
+[G]all'Osteria all'Osteria
+[C]all'osteria…
 {end_of_chorus}

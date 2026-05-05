@@ -1,37 +1,38 @@
 {title: Re di Galla}
 {emoji: 👑}
 {number: 08}
+{key: C#m}
 
 {start_of_verse: Strofa}
-Cerco l'estate in un pomeriggio
-ma il sole è nascosto e il cielo un pò grigio
-quanta saudade a Gallarate
-vado a cercare birrette ghiacciate
+[C#m]Cerco l'estate in un pomeriggio
+[A]ma il sole è nascosto e il cielo un pò grigio
+[E]quanta saudade a Gallarate
+[B]vado a cercare birrette ghiacciate
 {end_of_verse}
 
 {start_of_chorus: Ritornello}
-Sai perché mi sento un re quando faccio ape da te
-sei la mia ape regina e quando stacchi dal bar
-ti porterà via sull'ape car
+[A]Sai perché mi sento un re quando faccio ape da te
+[E]sei la mia ape regina e quando stacchi dal bar
+[B]ti porterà via sull'ape car
 {end_of_chorus}
 
 {start_of_verse: Strofa}
-Oh Chiara vorrei una birra chiara,
-la tua bellezza è chiara,
-la tua acqua azzurra è acqua chiara
+[C#m]Oh Chiara vorrei una birra chiara,
+[A]la tua bellezza è chiara,
+[E]la tua acqua azzurra è acqua chiara
 {end_of_verse}
 
 {start_of_chorus: Ritornello}
-Sai perché mi sento un re quando faccio ape da te
-sei la mia ape regina e quando stacchi dal bar
-ti porterà via sull'ape car
+[A]Sai perché mi sento un re quando faccio ape da te
+[E]sei la mia ape regina e quando stacchi dal bar
+[B]ti porterà via sull'ape car
 {end_of_chorus}
 
 {start_of_outro: Finale}
-Ape Regina — via sull'ape car
-Fino a mattina sull'ape car
-Ape Regina — via sull'ape car
-Fino a mattina sull'ape car
-Ape Regina — via sull'ape car
-Fino a mattina sull'ape car
+[C#m]Ape Regina — via sull'ape car
+[A]fino a mattina sull'ape car
+[C#m]Ape Regina — via sull'ape car
+[A]fino a mattina sull'ape car
+[C#m]Ape Regina — via sull'ape car
+[A]fino a mattina sull'ape car
 {end_of_outro}

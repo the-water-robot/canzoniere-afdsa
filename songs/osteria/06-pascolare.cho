@@ -1,45 +1,46 @@
 {title: Pascolare}
 {emoji: 🐑}
 {number: 06}
+{key: F}
 
 {start_of_verse: Strofa}
-Se vivessi al mare farei pascolare
-le mie pecore di mare per tutto il litorale
-le farei poi entrare nell'acqua in modo buffo
-dall'alto di un trabucco ad una ad una in tuffo
-e urlerei sott'acqua per tenerle insieme
-grazie a quello che ho imparato dai canti di balene
+[F]Se vivessi al mare farei pascolare
+[Bb]le mie pecore di mare per tutto il litorale
+[F]le farei poi entrare nell'acqua in modo buffo
+[C]dall'alto di un trabucco ad una ad una in tuffo
+[F]e urlerei sott'acqua per tenerle insieme
+[Bb]grazie a quello che ho imparato dai canti di balene
 {end_of_verse}
 
 {start_of_chorus: Ritornello}
-pascola pascolare pascolare
+[F]pascola pascolare pascolare
 {end_of_chorus}
 
 {start_of_verse: Strofa}
-Se vivessi in cielo farei pascolare
-le mie pecore di cielo sui soffi di maestrale
-e volerei in aliante col mio cane assistente
-che resti sempre attento a controllarle tutte quante
-perché quando volano frivole spensierate e libere
-si confondon facile col bianco delle nuvole
+[F]Se vivessi in cielo farei pascolare
+[Bb]le mie pecore di cielo sui soffi di maestrale
+[F]e volerei in aliante col mio cane assistente
+[Dm]che resti sempre attento a controllarle tutte quante
+[Bb]perché quando volano frivole spensierate e libere
+[C]si confondon facile col bianco delle nuvole
 {end_of_verse}
 
 {start_of_chorus: Ritornello}
-pascola pascolare pascolare
+[F]pascola pascolare pascolare
 {end_of_chorus}
 
 {start_of_verse: Strofa}
-Se vivessi nello spazio farei pascolare
-le mie pecore spaziali per la volta astrale
-e avrei un'astrostalla vicino ad una stella
-e penserei che bello e penserei che bello
+[F]Se vivessi nello spazio farei pascolare
+[Bb]le mie pecore spaziali per la volta astrale
+[F]e avrei un'astrostalla vicino ad una stella
+[C]e penserei che bello e penserei che bello
 {end_of_verse}
 
 {start_of_chorus: Ritornello}
-pascola pascolare pascolare
+[F]pascola pascolare pascolare
 {end_of_chorus}
 
 {start_of_outro: Outro}
-Se vivessi sui monti farei pascolare
-le mie belle pecorelle come sono solito fare
+[F]Se vivessi sui monti farei pascolare
+[Bb]le mie belle pecorelle come sono solito fare
 {end_of_outro}

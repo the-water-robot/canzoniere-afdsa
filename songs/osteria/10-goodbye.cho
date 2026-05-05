@@ -1,48 +1,49 @@
 {title: Goodbye}
 {emoji: 🌅}
 {number: 10}
+{key: C}
 
 {start_of_verse: Strofa}
-Mi sveglio al mattino, il sole sul cuscino
-il caffè nella tazza lo porto in terrazza, un aereo nel cielo
-la mano sul banano che sta in fronte a me
-mi manchi già ma io non manco a te
+[C]Mi sveglio al mattino, il sole sul cuscino
+[Am]il caffè nella tazza lo porto in terrazza, un aereo nel cielo
+[F]la mano sul banano che sta in fronte a me
+[G]mi manchi già ma io non manco a te
 {end_of_verse}
 
 {start_of_chorus: Ritornello}
-Goodbye Goodbye
-We had a great time
-Goodbye Goodbye
-In my dream last night
+[C]Goodbye Goodbye
+[Am]We had a great time
+[F]Goodbye Goodbye
+[G]In my dream last night
 {end_of_chorus}
 
 {start_of_verse: Strofa}
-È stato una festa sfrecciare su una Mustang
-portarti ad un ballo sotto a un tramonto giallo
-sopra un nastro di slackline, e sai ho scommesso alla SNAI
-che non mi bacerai alle Hawaii
+[C]È stato una festa sfrecciare su una Mustang
+[Am]portarti ad un ballo sotto a un tramonto giallo
+[F]sopra un nastro di slackline, e sai ho scommesso alla SNAI
+[G]che non mi bacerai alle Hawaii
 ma se accadrà mi sentirò bene
 {end_of_verse}
 
 {start_of_chorus: Ritornello}
-Goodbye Goodbye
-We had a great time
-Goodbye Goodbye
-In my dream last night
+[C]Goodbye Goodbye
+[Am]We had a great time
+[F]Goodbye Goodbye
+[G]In my dream last night
 {end_of_chorus}
 
 {start_of_verse: Strofa}
-Mi hai messo in catene tra i soffi di balene
-e hai preso in affitto dei denti da stregatto per dirmi nel cielo
-che è improbabile stare insieme io e te
-mi manchi già ma io non manco a te
+[C]Mi hai messo in catene tra i soffi di balene
+[Am]e hai preso in affitto dei denti da stregatto per dirmi nel cielo
+[F]che è improbabile stare insieme io e te
+[G]mi manchi già ma io non manco a te
 {end_of_verse}
 
 {start_of_outro: Finale}
-Mi sveglio al mattino, il sole sul cuscino
-il caffè nella tazza lo porto in terrazza, un aereo nel cielo
-il sole sul cuscino
-il caffè nella tazza l'oceano la terrazza, un aereo nel cielo
-il sole sul cuscino
-il caffè nella tazza l'oceano la terrazza, un aereo nel cielo…
+[C]Mi sveglio al mattino, il sole sul cuscino
+[Am]il caffè nella tazza lo porto in terrazza, un aereo nel cielo
+[F]il sole sul cuscino
+[C]il caffè nella tazza l'oceano la terrazza, un aereo nel cielo
+[F]il sole sul cuscino
+[C]il caffè nella tazza l'oceano la terrazza, un aereo nel cielo…
 {end_of_outro}

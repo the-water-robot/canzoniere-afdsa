@@ -1,60 +1,61 @@
 {title: Mago}
 {emoji: 🪄}
 {number: 03}
+{key: C}
 
 {start_of_verse: Strofa}
-Nel bosco nascosto c'è un mago scomposto
-che fa i sim sala bin
+[C]Nel bosco nascosto c'è un mago scomposto
+[G]che fa i sim sala bin
 {end_of_verse}
 
 {start_of_chorus: Ritornello}
-sim sala bin
+[C]sim sala bin
 sim sala bin
 
-patate arrosto prezzemolo finocchio
-e sim salabin
+[F]patate arrosto prezzemolo finocchio
+[G]e sim salabin
 
-sim sala bin
+[C]sim sala bin
 sim sala bin
 {end_of_chorus}
 
 {start_of_bridge: Ponte}
-ma sim sala bin de che?
-il sim sala bin cos'è?
-ma sim sala bin de che?
-il sim sala bin cos'è?
+[Am]ma sim sala bin de che?
+[F]il sim sala bin cos'è?
+[Am]ma sim sala bin de che?
+[G]il sim sala bin cos'è?
 {end_of_bridge}
 
 {start_of_verse: Strofa}
-Nel bosco nascosto c'è un mago scomposto
-che fa i sim sala bin
+[C]Nel bosco nascosto c'è un mago scomposto
+[G]che fa i sim sala bin
 {end_of_verse}
 
 {start_of_chorus: Ritornello}
-sim sala bin
+[C]sim sala bin
 sim sala bin
 
-patate arrosto prezzemolo e finocchio
-e sim salabin
+[F]patate arrosto prezzemolo e finocchio
+[G]e sim salabin
 
-sim sala bin
+[C]sim sala bin
 sim sala bin
 {end_of_chorus}
 
 {start_of_bridge: Ponte}
-ma sim sala bin de che?
-il sim sala bin cos'è?
-ma sim sala bin de che?
-il sim sala bin cos'è?
+[Am]ma sim sala bin de che?
+[F]il sim sala bin cos'è?
+[Am]ma sim sala bin de che?
+[G]il sim sala bin cos'è?
 {end_of_bridge}
 
 {start_of_chorus: Finale}
-mago dimmi che
+[C]mago dimmi che
 il sim sala bim fa star bene soltanto ad urlarlo
-mago dimmi che
+[F]mago dimmi che
 qualsiasi rituale o preghiera soltanto nel farlo
-mago dimmi che
+[C]mago dimmi che
 il sim sala bim fa star bene soltanto ad urlarlo
-mago dimmi che
+[G]mago dimmi che
 qualsiasi rituale o preghiera soltanto nel farlo
 {end_of_chorus}
