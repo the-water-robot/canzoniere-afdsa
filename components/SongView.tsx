@@ -116,27 +116,37 @@ export function SongView({ song }: { song: Song }) {
           <ThemeToggle />
         </div>
 
-        {/* Controls row: instrument toggle + font size */}
-        <div className="mx-auto flex max-w-2xl items-center gap-2 px-3 pb-1.5">
-          <div className="inline-flex rounded-full bg-[var(--border)] p-0.5 text-xs font-semibold">
-            {(["guitar", "ukulele"] as Instrument[]).map((inst) => (
-              <button
-                key={inst}
-                type="button"
-                onClick={() => setInstrument(inst)}
-                aria-pressed={instrument === inst}
-                className={
-                  "rounded-full px-2.5 py-1 transition " +
-                  (instrument === inst
-                    ? "bg-[var(--bg)] text-[var(--text)] shadow-sm"
-                    : "text-[var(--muted)] hover:text-[var(--text)]")
-                }
-              >
-                {inst === "guitar" ? "Chitarra" : "Ukulele"}
-              </button>
-            ))}
-          </div>
-          <div className="flex items-center gap-1">
+        {/* Chord strip + instrument toggle — wraps if too many chords */}
+        <div className="mx-auto flex max-w-2xl flex-wrap items-center gap-1.5 px-3 pb-2.5">
+          {chords.map((c) => (
+            <button
+              key={c}
+              type="button"
+              onClick={() => handleOpenChord(c)}
+              className="shrink-0 rounded-full bg-flamingo/10 px-2.5 py-0.5 font-mono text-sm font-bold text-flamingo ring-1 ring-flamingo/25 transition hover:bg-flamingo/20"
+            >
+              {c}
+            </button>
+          ))}
+          <div className="ml-auto flex shrink-0 items-center gap-1.5 pl-1">
+            <div className="inline-flex rounded-full bg-[var(--border)] p-0.5 text-xs font-semibold">
+              {(["guitar", "ukulele"] as Instrument[]).map((inst) => (
+                <button
+                  key={inst}
+                  type="button"
+                  onClick={() => setInstrument(inst)}
+                  aria-pressed={instrument === inst}
+                  className={
+                    "rounded-full px-2.5 py-1 transition " +
+                    (instrument === inst
+                      ? "bg-[var(--bg)] text-[var(--text)] shadow-sm"
+                      : "text-[var(--muted)] hover:text-[var(--text)]")
+                  }
+                >
+                  {inst === "guitar" ? "Chitarra" : "Ukulele"}
+                </button>
+              ))}
+            </div>
             {([["−", -1], ["+", 1]] as [string, number][]).map(([lbl, d]) => (
               <button
                 key={lbl}
@@ -149,20 +159,6 @@ export function SongView({ song }: { song: Song }) {
               </button>
             ))}
           </div>
-        </div>
-
-        {/* Chord pills row */}
-        <div className="mx-auto flex max-w-2xl gap-1.5 overflow-x-auto px-3 pb-2.5 scrollbar-none">
-          {chords.map((c) => (
-            <button
-              key={c}
-              type="button"
-              onClick={() => handleOpenChord(c)}
-              className="shrink-0 rounded-full bg-flamingo/10 px-2.5 py-0.5 font-mono text-sm font-bold text-flamingo ring-1 ring-flamingo/25 transition hover:bg-flamingo/20"
-            >
-              {c}
-            </button>
-          ))}
         </div>
       </header>
 
