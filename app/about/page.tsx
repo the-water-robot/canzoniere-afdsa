@@ -95,16 +95,15 @@ export default function AboutPage() {
               vai avanti tutta la vita.
             </p>
             <p>
-              Perché i sogni si mettono in un cassetto — ma ogni tanto bisogna
+              Perché i sogni si mettono in un cassetto, ma ogni tanto bisogna
               aprirlo, spolverarlo, e ricominciare a sognare. Qui dentro ci
               sono le parole e gli accordi di tutto quello che abbiamo scritto
-              finora: storie di kebab e di libertà, di notti al porto e
-              tramonti sulle onde, di gufi che vogliono volare e di osterie
-              che non chiudono mai.
+              finora: storie di libertà, di viaggi, di amicizia, di umanità,
+              tramonti, brindisi.
             </p>
             <p>
               Per chi suona la chitarra, per chi suona l'ukulele, per chi non
-              sa suonare niente ma canta lo stesso a squarciagola — controvento,
+              sa suonare niente ma canta lo stesso a squarciagola,
               stonato, e felice.
             </p>
             <p className="italic text-[var(--muted)]">
