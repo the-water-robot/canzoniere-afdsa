@@ -90,20 +90,25 @@ export default function AboutPage() {
           </h2>
           <div className="space-y-3 text-sm leading-relaxed text-[var(--text)]/85">
             <p>
-              Perché le canzoni si imparano cantandole insieme. Perché ogni
-              tanto serve un posto dove trovare il giro giusto senza dover
-              chiedere a chi le ha scritte, e perché un'osteria senza canzoniere
-              è solo un bar con i tavoli sporchi.
+              Perché certe serate hanno bisogno di una chitarra. Perché alcune
+              canzoni le sai a metà, e quell'altra metà la inventi, e poi ci
+              vai avanti tutta la vita.
             </p>
             <p>
-              Qui dentro ci sono i testi e gli accordi di tutto quello che
-              abbiamo scritto: per chi suona la chitarra, per chi suona
-              l'ukulele, per chi vuole solo cantare a squarciagola.
-              Aggiungeremo brani man mano che escono, alle stelle cadenti
-              non si comanda.
+              Perché i sogni si mettono in un cassetto — ma ogni tanto bisogna
+              aprirlo, spolverarlo, e ricominciare a sognare. Qui dentro ci
+              sono le parole e gli accordi di tutto quello che abbiamo scritto
+              finora: storie di kebab e di libertà, di notti al porto e
+              tramonti sulle onde, di gufi che vogliono volare e di osterie
+              che non chiudono mai.
+            </p>
+            <p>
+              Per chi suona la chitarra, per chi suona l'ukulele, per chi non
+              sa suonare niente ma canta lo stesso a squarciagola — controvento,
+              stonato, e felice.
             </p>
             <p className="italic text-[var(--muted)]">
-              «Una rosa, se non si chiamasse rosa, avrebbe comunque lo stesso profumo.»
+              «E anche voi gente, non smettete mai di sognare.»
             </p>
           </div>
         </section>
