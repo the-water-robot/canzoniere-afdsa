@@ -14,7 +14,8 @@ export type SectionKind =
   | "bridge"
   | "outro"
   | "tab"
-  | "grid";
+  | "grid"
+  | "instrumental";
 
 export type Section = {
   kind: SectionKind;
@@ -85,6 +86,8 @@ const SECTION_OPEN: Record<string, SectionKind> = {
   start_of_outro: "outro",
   start_of_tab: "tab",
   start_of_grid: "grid",
+  start_of_instrumental: "instrumental",
+  start_of_solo: "instrumental",
 };
 
 const SECTION_CLOSE = new Set([
@@ -99,6 +102,8 @@ const SECTION_CLOSE = new Set([
   "end_of_outro",
   "end_of_tab",
   "end_of_grid",
+  "end_of_instrumental",
+  "end_of_solo",
 ]);
 
 export function parseChordPro(source: string, filename: string): Omit<Song, "slug" | "albumSlug"> {

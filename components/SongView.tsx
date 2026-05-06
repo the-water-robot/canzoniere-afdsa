@@ -14,23 +14,26 @@ import { albumBySlug } from "@/lib/albums";
 
 // Per-kind accent colours (CSS variable names / tailwind classes)
 const KIND_LABEL: Record<string, string> = {
-  intro:   "text-sky",
-  verse:   "text-[var(--muted)]",
-  chorus:  "text-flamingo",
-  bridge:  "text-solar",
-  outro:   "text-violet",
+  intro:        "text-sky",
+  verse:        "text-[var(--muted)]",
+  chorus:       "text-flamingo",
+  bridge:       "text-solar",
+  outro:        "text-violet",
+  instrumental: "text-lime",
 };
 const KIND_BG: Record<string, string> = {
-  intro:   "bg-sky/6",
-  chorus:  "bg-flamingo/6",
-  bridge:  "bg-solar/6",
-  outro:   "bg-violet/6",
+  intro:        "bg-sky/6",
+  chorus:       "bg-flamingo/6",
+  bridge:       "bg-solar/6",
+  outro:        "bg-violet/6",
+  instrumental: "bg-lime/6",
 };
 const KIND_CHORD: Record<string, string> = {
-  intro:   "text-sky",
-  chorus:  "text-flamingo",
-  bridge:  "text-solar",
-  outro:   "text-violet",
+  intro:        "text-sky",
+  chorus:       "text-flamingo",
+  bridge:       "text-solar",
+  outro:        "text-violet",
+  instrumental: "text-lime",
 };
 
 function readSafe(): boolean {

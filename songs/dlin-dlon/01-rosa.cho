@@ -5,7 +5,12 @@
 {notes: Canzone romantica con influenze latine.}
 {spotify: 0CUnjnc1fLQM3xqm4QguiF}
 
-{start_of_intro: Introduzione}
+{start_of_intro: Intro con violini possibilmente}
+[F][F][Gm][C]
+[F][F][Gm][C]
+{end_of_intro}
+
+{start_of_verse: Strofa}
 [F]Per le strade di Havana Club
 [F]Busco un taxi è un Chevrolet blue
 [Gm]Portami dove abiti tu [C]tututurututtu
@@ -17,7 +22,7 @@
 [Gm]Per qualsiasi corazon che fa [C]bumburumbumbum
 [F]bumburumbumbum bumburumbumbum 
 [Gm]bumburumbumbumbumbumbum [C]bumburumbumbum
-{end_of_intro}
+{end_of_verse}
 
 {start_of_chorus: Ritornello}
 [Bb]Rosa,
@@ -30,10 +35,17 @@ Quieres ser mi [A7]esposa
 Vamos a [F]bailar
 {end_of_chorus}
 
+{start_of_instrumental: Strumentale}
+[F][F][Gm][C]
+[F][F][Gm][C]
+{end_of_instrumental}
+
 {start_of_verse: Strofa}
-[F]Andiamo a letto [Gm]io e [C]te
-[F]Puoi anche non [Gm]portare il [C]toupet
-[F]Ti accarezzerò la testa [Gm]in questo [C]tête-à-tête
+[F]Andiamo a letto io e te
+[F]Puoi anche non portare il toupet
+[Gm]Ti accarezzerò la testa [C]in questo tête-à-tête
+[F]tetetetetetetete tetetetetetetete
+[Gm]tetetetetetetetete [C]tetetetete
 {end_of_verse}
 
 {start_of_chorus: Ritornello finale}
