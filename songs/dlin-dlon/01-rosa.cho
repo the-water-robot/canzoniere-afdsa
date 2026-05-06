@@ -6,23 +6,28 @@
 {spotify: 0CUnjnc1fLQM3xqm4QguiF}
 
 {start_of_intro: Introduzione}
-[F]Per le strade di Havana [C]Club
-[F]Busco un taxi [Gm]è un Chevrolet [C]blue
-[F]Portami dove [Gm]abiti tu - [C]tututurututtu
-[F]Mi dai le chiavi [Gm]ma [C]tu
-[F]Sei tu che [Gm]hai il [C]passe-partout
-[F]Per qualsiasi corazon [Gm]che fa bum [C]bubum bum bum
+[F]Per le strade di Havana Club
+[F]Busco un taxi è un Chevrolet blue
+[Gm]Portami dove abiti tu [C]tututurututtu
+[F]tuturututututuru tuturututututuru
+[Gm]tuturutututututu [C]tututurututtu
+
+[F]Mi dai le chiavi ma tu
+[F]Sei tu che hai il passe-partout
+[Gm]Per qualsiasi corazon che fa [C]bumburumbumbum
+[F]bumburumbumbum bumburumbumbum 
+[Gm]bumburumbumbumbumbumbum [C]bumburumbumbum
 {end_of_intro}
 
 {start_of_chorus: Ritornello}
 [Bb]Rosa,
-[Bb]Mamacita [F]hermosa
-[Bb]Quieres ser [F]mi [A7]esposa
-[Bb]Vamos a [F]bailar
+Mamacita [F]hermosa
+Quieres ser mi [A7]esposa
+Vamos a [F]bailar
 [Bb]Rosa,
-[Bb]Mamacita [F]hermosa
-[Bb]Quieres ser [F]mi [A7]esposa
-[Bb]Vamos a [F]bailar
+Mamacita [F]hermosa
+Quieres ser mi [A7]esposa
+Vamos a [F]bailar
 {end_of_chorus}
 
 {start_of_verse: Strofa}
@@ -33,15 +38,31 @@
 
 {start_of_chorus: Ritornello finale}
 [Bb]Rosa,
-[Bb]Mamacita [F]hermosa
-[Bb]Quieres ser [F]mi [A7]esposa
-[Bb]Vamos a [F]bailar
+Mamacita [F]hermosa
+Quieres ser mi [A7]esposa
+Vamos a [F]bailar
 [Bb]Rosa,
-[Bb]Mamacita [F]hermosa
-[Bb]Quieres ser [F]mi [A7]esposa
-[Bb]Vamos a [F]bailar
+Mamacita [F]hermosa
+Quieres ser mi [A7]esposa
+Vamos a [F]bailar
+{end_of_chorus}
+
+{start_of_solo: Assolo}
+[F][F][Gm][C]
+[F][F][Gm][C]
+{end_of_solo}
+
+{start_of_chorus: Ritornello finale}
 [Bb]Rosa,
-[Bb]Mamacita [F]hermosa
-[Bb]Quieres ser [F]mi [A7]esposa
-[Bb]Vamos a [F]bailar
+Mamacita [F]hermosa
+Quieres ser mi [A7]esposa
+Vamos a [F]bailar
+[Bb]Rosa,
+Mamacita [F]hermosa
+Quieres ser mi [A7]esposa
+Vamos a [F]bailar
+[Bb]Rosa,
+Mamacita [F]hermosa
+Quieres ser mi [A7]esposa
+Vamos a [F]bailar
 {end_of_chorus}
