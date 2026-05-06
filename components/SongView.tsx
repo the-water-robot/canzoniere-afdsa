@@ -180,6 +180,18 @@ export function SongView({ song }: { song: Song }) {
             <FilteredText text={song.notes} safe={safe} />
           </p>
         )}
+        {song.spotifyId && (
+          <div className="mt-8">
+            <iframe
+              src={`https://open.spotify.com/embed/track/${song.spotifyId}?utm_source=generator&theme=0`}
+              width="100%"
+              height="152"
+              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+              loading="lazy"
+              style={{ borderRadius: "12px", border: "none" }}
+            />
+          </div>
+        )}
       </main>
 
       {openChord && (

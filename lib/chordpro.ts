@@ -30,6 +30,7 @@ export type Song = {
   number: string;
   key?: string;
   notes?: string;
+  spotifyId?: string;
   passwordHash?: string;
   sections: Section[];
 };
@@ -62,14 +63,10 @@ function parseLine(raw: string): ChordLine {
     const chord = remaining.slice(bracketIdx + 1, closeIdx);
     remaining = remaining.slice(closeIdx + 1);
     const nextBracket = remaining.indexOf("[");
-    const text =
-      nextBracket === -1 ? remaining : remaining.slice(0, nextBracket);
-    segments.push({ chord, text: nextBracket === -1 ? "" : "" });
-    // chord with its following text
-    segments[segments.length - 1] = {
+    segments.push({
       chord,
       text: nextBracket === -1 ? remaining : remaining.slice(0, nextBracket),
-    };
+    });
     remaining = nextBracket === -1 ? "" : remaining.slice(nextBracket);
   }
   return { segments };
@@ -111,6 +108,7 @@ export function parseChordPro(source: string, filename: string): Omit<Song, "slu
   let number = "";
   let key: string | undefined;
   let notes: string | undefined;
+  let spotifyId: string | undefined;
   let passwordHash: string | undefined;
 
   const sections: Section[] = [];
@@ -132,6 +130,7 @@ export function parseChordPro(source: string, filename: string): Omit<Song, "slu
       if (k === "emoji") { emoji = v; continue; }
       if (k === "number") { number = v; continue; }
       if (k === "notes") { notes = v; continue; }
+      if (k === "spotify") { spotifyId = v; continue; }
       if (k === "password") { passwordHash = simpleHash(v); continue; }
 
       if (SECTION_CLOSE.has(k)) {
@@ -164,7 +163,7 @@ export function parseChordPro(source: string, filename: string): Omit<Song, "slu
     currentSection.lines.push(parseLine(line));
   }
 
-  return { title, emoji, number, key, notes, passwordHash, sections };
+  return { title, emoji, number, key, notes, spotifyId, passwordHash, sections };
 }
 
 // Deterministic hash used server-side only — maps plaintext password to hex string.
