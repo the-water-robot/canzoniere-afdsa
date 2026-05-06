@@ -117,6 +117,20 @@ export function SongView({ song }: { song: Song }) {
             </svg>
           </button>
 
+          {/* PDF export */}
+          <button
+            type="button"
+            onClick={() => window.print()}
+            aria-label="Esporta PDF"
+            className="print-hide inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full text-[var(--muted)] transition hover:bg-[var(--border)] hover:text-[var(--text)]"
+          >
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M6 9V2h12v7" />
+              <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2" />
+              <rect x="6" y="14" width="12" height="8" rx="1" />
+            </svg>
+          </button>
+
           <ThemeToggle />
         </div>
 
@@ -171,6 +185,12 @@ export function SongView({ song }: { song: Song }) {
         className="relative mx-auto max-w-2xl px-4 pb-32 pt-6"
         style={{ fontSize: `${scale}rem` }}
       >
+        {/* Visible only when printing */}
+        <div className="print-header mb-6 hidden border-b border-black pb-4">
+          <div className="text-2xl font-bold">{song.emoji} {song.title}</div>
+          {song.key && <div className="mt-1 text-xs uppercase tracking-widest">Chiave: {song.key}</div>}
+        </div>
+
         {song.sections.map((section, idx) => (
           <SectionBlock
             key={idx}

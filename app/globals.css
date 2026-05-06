@@ -114,3 +114,44 @@ body {
     transition-duration: 0.01ms !important;
   }
 }
+
+/* ── Print / PDF export ─────────────────────────────────── */
+@media print {
+  /* reset background */
+  html, body { background: #fff !important; color: #000 !important; }
+  .scene-bg { background: #fff !important; }
+
+  /* hide chrome */
+  header,
+  [aria-hidden="true"],
+  iframe,
+  .print-hide { display: none !important; }
+
+  /* print header: title + key inline */
+  .print-header { display: block !important; }
+
+  /* section backgrounds → subtle border only */
+  section {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    break-inside: avoid;
+  }
+
+  /* chord colors → black */
+  button[class*="text-flamingo"],
+  button[class*="text-sky"],
+  button[class*="text-solar"],
+  button[class*="text-violet"],
+  button[class*="text-lime"] {
+    color: #000 !important;
+    font-weight: 700;
+  }
+
+  /* make chord buttons non-interactive (no pointer style) */
+  button { cursor: default !important; }
+
+  a, button { text-decoration: none !important; }
+
+  main { padding-top: 0 !important; }
+}
