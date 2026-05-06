@@ -186,9 +186,9 @@ export function SongView({ song }: { song: Song }) {
         style={{ fontSize: `${scale}rem` }}
       >
         {/* Visible only when printing */}
-        <div className="print-header mb-6 hidden border-b border-black pb-4">
-          <div className="text-2xl font-bold">{song.emoji} {song.title}</div>
-          {song.key && <div className="mt-1 text-xs uppercase tracking-widest">Chiave: {song.key}</div>}
+        <div className="print-header mb-4 hidden border-b border-black pb-3" style={{ fontSize: "14pt" }}>
+          <div className="font-bold">{song.title}</div>
+          {song.key && <div className="mt-0.5" style={{ fontSize: "8pt" }}>Chiave: {song.key}</div>}
         </div>
 
         {song.sections.map((section, idx) => (

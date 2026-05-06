@@ -117,41 +117,52 @@ body {
 
 /* ── Print / PDF export ─────────────────────────────────── */
 @media print {
-  /* reset background */
+  @page { margin: 1.2cm; size: A4 portrait; }
+
+  /* black on white, everything */
   html, body { background: #fff !important; color: #000 !important; }
-  .scene-bg { background: #fff !important; }
+  * { color: #000 !important; background: transparent !important;
+      box-shadow: none !important; border-color: #ccc !important;
+      text-shadow: none !important; -webkit-text-fill-color: #000 !important; }
 
   /* hide chrome */
-  header,
-  [aria-hidden="true"],
-  iframe,
-  .print-hide { display: none !important; }
+  header, [aria-hidden="true"], iframe, .print-hide { display: none !important; }
 
-  /* print header: title + key inline */
+  /* print-only title */
   .print-header { display: block !important; }
 
-  /* section backgrounds → subtle border only */
+  /* compact font + tight lines */
+  main {
+    padding: 0 !important;
+    max-width: 100% !important;
+    font-size: 8.5pt !important;
+    line-height: 1.25 !important;
+  }
+
+  /* compact sections */
   section {
-    background: transparent !important;
+    margin-bottom: 6pt !important;
+    padding: 2pt 4pt !important;
     border: none !important;
-    box-shadow: none !important;
     break-inside: avoid;
   }
 
-  /* chord colors → black */
-  button[class*="text-flamingo"],
-  button[class*="text-sky"],
-  button[class*="text-solar"],
-  button[class*="text-violet"],
-  button[class*="text-lime"] {
-    color: #000 !important;
-    font-weight: 700;
+  /* section kind label */
+  section > div:first-child { margin-bottom: 2pt !important; font-size: 6.5pt !important; }
+
+  /* chord+lyric rows */
+  .space-y-2 > * + * { margin-top: 1pt !important; }
+
+  /* chord buttons — plain bold text, no decoration */
+  button {
+    padding: 0 !important;
+    border: none !important;
+    background: none !important;
+    font-weight: 700 !important;
+    cursor: default !important;
+    -webkit-appearance: none !important;
   }
 
-  /* make chord buttons non-interactive (no pointer style) */
-  button { cursor: default !important; }
-
-  a, button { text-decoration: none !important; }
-
-  main { padding-top: 0 !important; }
+  /* notes */
+  .mt-8 { margin-top: 6pt !important; }
 }
