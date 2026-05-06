@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useMemo, useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import type { Song, Section } from "@/lib/chordpro";
 import { uniqueChords } from "@/lib/chordpro";
@@ -49,6 +49,31 @@ export function SongView({ song }: { song: Song }) {
   const [fontStep,  setFontStep]    = useState(0);
   const [safe,      setSafe]        = useState(readSafe);
   const [dreamText, setDreamText]   = useState(song.dream ?? "");
+  const [scrolling, setScrolling]   = useState(false);
+  const [scrollSpeed, setScrollSpeed] = useState(40); // px/s
+  const rafRef  = useRef<number | null>(null);
+  const lastTs  = useRef<number | null>(null);
+
+  useEffect(() => {
+    if (!scrolling) {
+      if (rafRef.current !== null) cancelAnimationFrame(rafRef.current);
+      lastTs.current = null;
+      return;
+    }
+    const step = (ts: number) => {
+      if (lastTs.current === null) lastTs.current = ts;
+      const dt = ts - lastTs.current;
+      lastTs.current = ts;
+      window.scrollBy(0, (scrollSpeed * dt) / 1000);
+      if (window.innerHeight + window.scrollY >= document.body.scrollHeight - 4) {
+        setScrolling(false);
+        return;
+      }
+      rafRef.current = requestAnimationFrame(step);
+    };
+    rafRef.current = requestAnimationFrame(step);
+    return () => { if (rafRef.current !== null) cancelAnimationFrame(rafRef.current); };
+  }, [scrolling, scrollSpeed]);
 
   const toggleSafe = () => setSafe((s) => {
     const next = !s;
@@ -115,6 +140,41 @@ export function SongView({ song }: { song: Song }) {
             <svg width="16" height="16" viewBox="0 0 24 24" fill={safe ? "currentColor" : "none"} stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
             </svg>
+          </button>
+
+          {/* Autoscroll */}
+          {scrolling && (
+            <>
+              <button
+                type="button"
+                onClick={() => setScrollSpeed((s) => Math.max(15, s - 15))}
+                className="print-hide inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[var(--border)] text-[10px] font-bold text-[var(--muted)] hover:text-[var(--text)]"
+                aria-label="Rallenta"
+              >−</button>
+              <button
+                type="button"
+                onClick={() => setScrollSpeed((s) => Math.min(120, s + 15))}
+                className="print-hide inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[var(--border)] text-[10px] font-bold text-[var(--muted)] hover:text-[var(--text)]"
+                aria-label="Accelera"
+              >+</button>
+            </>
+          )}
+          <button
+            type="button"
+            onClick={() => setScrolling((s) => !s)}
+            aria-label={scrolling ? "Ferma autoscroll" : "Avvia autoscroll"}
+            className={
+              "print-hide inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full transition " +
+              (scrolling
+                ? "bg-flamingo/15 text-flamingo hover:bg-flamingo/25"
+                : "text-[var(--muted)] hover:bg-[var(--border)] hover:text-[var(--text)]")
+            }
+          >
+            {scrolling ? (
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>
+            ) : (
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg>
+            )}
           </button>
 
           {/* PDF export */}
