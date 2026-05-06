@@ -142,55 +142,6 @@ export function SongView({ song }: { song: Song }) {
             </svg>
           </button>
 
-          {/* Autoscroll */}
-          {scrolling && (
-            <>
-              <button
-                type="button"
-                onClick={() => setScrollSpeed((s) => Math.max(15, s - 15))}
-                className="print-hide inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[var(--border)] text-[10px] font-bold text-[var(--muted)] hover:text-[var(--text)]"
-                aria-label="Rallenta"
-              >−</button>
-              <button
-                type="button"
-                onClick={() => setScrollSpeed((s) => Math.min(120, s + 15))}
-                className="print-hide inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[var(--border)] text-[10px] font-bold text-[var(--muted)] hover:text-[var(--text)]"
-                aria-label="Accelera"
-              >+</button>
-            </>
-          )}
-          <button
-            type="button"
-            onClick={() => setScrolling((s) => !s)}
-            aria-label={scrolling ? "Ferma autoscroll" : "Avvia autoscroll"}
-            className={
-              "print-hide inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full transition " +
-              (scrolling
-                ? "bg-flamingo/15 text-flamingo hover:bg-flamingo/25"
-                : "text-[var(--muted)] hover:bg-[var(--border)] hover:text-[var(--text)]")
-            }
-          >
-            {scrolling ? (
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>
-            ) : (
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg>
-            )}
-          </button>
-
-          {/* PDF export */}
-          <button
-            type="button"
-            onClick={() => window.print()}
-            aria-label="Esporta PDF"
-            className="print-hide inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full text-[var(--muted)] transition hover:bg-[var(--border)] hover:text-[var(--text)]"
-          >
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M6 9V2h12v7" />
-              <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2" />
-              <rect x="6" y="14" width="12" height="8" rx="1" />
-            </svg>
-          </button>
-
           <ThemeToggle />
         </div>
 
@@ -236,6 +187,40 @@ export function SongView({ song }: { song: Song }) {
                 A{lbl}
               </button>
             ))}
+
+            {/* Autoscroll */}
+            <div className="print-hide h-4 w-px bg-[var(--border)]" />
+            {scrolling && (
+              <>
+                <button type="button" onClick={() => setScrollSpeed((s) => Math.max(15, s - 15))}
+                  className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-[var(--border)] text-[10px] font-bold text-[var(--muted)] hover:text-[var(--text)]"
+                  aria-label="Rallenta">−</button>
+                <button type="button" onClick={() => setScrollSpeed((s) => Math.min(120, s + 15))}
+                  className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-[var(--border)] text-[10px] font-bold text-[var(--muted)] hover:text-[var(--text)]"
+                  aria-label="Accelera">+</button>
+              </>
+            )}
+            <button type="button" onClick={() => setScrolling((s) => !s)}
+              aria-label={scrolling ? "Ferma autoscroll" : "Avvia autoscroll"}
+              className={
+                "print-hide inline-flex h-6 w-6 items-center justify-center rounded-full transition " +
+                (scrolling ? "bg-flamingo/15 text-flamingo" : "bg-[var(--border)] text-[var(--muted)] hover:text-[var(--text)]")
+              }
+            >
+              {scrolling
+                ? <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>
+                : <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg>}
+            </button>
+
+            {/* PDF export */}
+            <button type="button" onClick={() => window.print()}
+              aria-label="Esporta PDF"
+              className="print-hide inline-flex h-6 w-6 items-center justify-center rounded-full bg-[var(--border)] text-[var(--muted)] transition hover:text-[var(--text)]"
+            >
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M6 9V2h12v7"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8" rx="1"/>
+              </svg>
+            </button>
           </div>
         </div>
       </header>
