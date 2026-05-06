@@ -21,6 +21,7 @@ export type Section = {
   kind: SectionKind;
   title: string;
   lines: ChordLine[];
+  repeat?: number;
 };
 
 export type Song = {
@@ -140,6 +141,12 @@ export function parseChordPro(source: string, filename: string): Omit<Song, "slu
       if (k === "spotify") { spotifyId = v; continue; }
       if (k === "dream") { dream = v; continue; }
       if (k === "password") { passwordHash = simpleHash(v); continue; }
+
+      if (k === "repeat" && currentSection) {
+        const n = parseInt(v, 10);
+        if (!isNaN(n) && n > 1) currentSection.repeat = n;
+        continue;
+      }
 
       if (SECTION_CLOSE.has(k)) {
         currentSection = null;

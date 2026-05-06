@@ -295,8 +295,13 @@ function SectionBlock({
   return (
     <section className={`mb-7 rounded-xl px-3 py-3 ${bg}`}>
       {section.title && (
-        <div className={`mb-2 font-display text-[0.58rem] font-bold uppercase tracking-[0.25em] ${label}`}>
-          {section.title}
+        <div className={`mb-2 flex items-center gap-1.5 font-display text-[0.58rem] font-bold uppercase tracking-[0.25em] ${label}`}>
+          <span>{section.title}</span>
+          {section.repeat && section.repeat > 1 && (
+            <span className="rounded-full bg-current/10 px-1.5 py-0.5 font-mono tracking-normal opacity-80">
+              ×{section.repeat}
+            </span>
+          )}
         </div>
       )}
       <div className="space-y-2">
