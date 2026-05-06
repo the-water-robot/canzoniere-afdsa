@@ -237,7 +237,24 @@ function SectionBlock({
       <div className="space-y-2">
         {section.lines.map((line, li) => {
           const hasChords = line.segments.some((s) => s.chord);
+          const isChordGrid = hasChords && line.segments.every((s) => !s.text.trim());
           const isDream = line.segments.length === 1 && line.segments[0].text.trim() === "%%dream%%";
+          if (isChordGrid) {
+            return (
+              <div key={li} className="flex flex-wrap gap-x-4 gap-y-1 py-0.5">
+                {line.segments.filter((s) => s.chord).map((s, si) => (
+                  <button
+                    key={si}
+                    type="button"
+                    onClick={() => onChordTap(s.chord!)}
+                    className={`font-mono text-[0.75em] font-bold transition hover:opacity-70 ${chordColor}`}
+                  >
+                    {s.chord}
+                  </button>
+                ))}
+              </div>
+            );
+          }
           if (isDream) {
             return (
               <div key={li} className="my-1">
