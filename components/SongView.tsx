@@ -181,20 +181,14 @@ export function SongView({ song }: { song: Song }) {
           </p>
         )}
         {song.spotifyId && (
-          <div className="mt-10 overflow-hidden rounded-2xl ring-1 ring-flamingo/30">
-            <div className="flex items-center gap-2 bg-flamingo/12 px-4 py-2.5">
-              <span className="text-base">🎵</span>
-              <span className="font-mono text-[0.6rem] font-bold uppercase tracking-[0.2em] text-flamingo">
-                Ascolta su Spotify
-              </span>
-            </div>
+          <div className="mt-8">
             <iframe
               src={`https://open.spotify.com/embed/track/${song.spotifyId}?utm_source=generator&theme=0`}
               width="100%"
               height="152"
               allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
               loading="lazy"
-              style={{ border: "none", display: "block" }}
+              style={{ borderRadius: "12px", border: "none" }}
             />
           </div>
         )}
