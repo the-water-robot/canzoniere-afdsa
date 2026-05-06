@@ -4,6 +4,7 @@
 {key: C}
 {password: kebab}
 {notes: Storia vera (o quasi) di Mr. Kebab, sognatore notturno di via Arquà.}
+{dream: andare a vedere l'opera alla prima del teatro della Scala}
 
 {start_of_verse: Strofa}
 [C]A nord di Milano (a Milano nord)
@@ -35,8 +36,7 @@ chi invece il monello con il pennello
 [F]e anche a Mister Kebab
 piace sognare
 [G]che un giorno riuscirà
-ad avere i soldi per andare a vedere l'opera
-alla prima del teatro della Scala
+%%dream%%
 {end_of_bridge}
 
 {start_of_chorus: Ritornello}
@@ -73,8 +73,7 @@ chi invece il monello con il pennello
 [F]e anche a Mister Kebab
 piace sognare
 [G]che un giorno riuscirà
-ad avere i soldi per andare a vedere l'opera
-alla prima del teatro della Scala
+%%dream%%
 {end_of_bridge}
 
 {start_of_chorus: Ritornello}

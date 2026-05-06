@@ -45,6 +45,7 @@ export function SongView({ song }: { song: Song }) {
   const [voicingIdx, setVoicingIdx] = useState(0);
   const [fontStep,  setFontStep]    = useState(0);
   const [safe,      setSafe]        = useState(readSafe);
+  const [dreamText, setDreamText]   = useState(song.dream ?? "");
 
   const toggleSafe = () => setSafe((s) => {
     const next = !s;
@@ -173,6 +174,8 @@ export function SongView({ song }: { song: Song }) {
             section={section}
             safe={safe}
             onChordTap={handleOpenChord}
+            dreamText={dreamText}
+            onDreamChange={setDreamText}
           />
         ))}
         {song.notes && (
@@ -212,9 +215,10 @@ export function SongView({ song }: { song: Song }) {
 }
 
 function SectionBlock({
-  section, safe, onChordTap,
+  section, safe, onChordTap, dreamText, onDreamChange,
 }: {
   section: Section; safe: boolean; onChordTap: (c: string) => void;
+  dreamText: string; onDreamChange: (v: string) => void;
 }) {
   const label      = KIND_LABEL[section.kind] ?? "text-[var(--muted)]";
   const bg         = KIND_BG[section.kind]    ?? "";
@@ -230,6 +234,19 @@ function SectionBlock({
       <div className="space-y-2">
         {section.lines.map((line, li) => {
           const hasChords = line.segments.some((s) => s.chord);
+          const isDream = line.segments.length === 1 && line.segments[0].text.trim() === "%%dream%%";
+          if (isDream) {
+            return (
+              <div key={li} className="my-1">
+                <input
+                  value={dreamText}
+                  onChange={(e) => onDreamChange(e.target.value)}
+                  placeholder="il tuo sogno…"
+                  className="w-full bg-transparent border-b border-dashed border-flamingo/60 text-flamingo italic outline-none placeholder:text-flamingo/35 py-0.5 leading-relaxed"
+                />
+              </div>
+            );
+          }
           if (!hasChords) {
             return (
               <p key={li} className="leading-relaxed text-[var(--text)]">
