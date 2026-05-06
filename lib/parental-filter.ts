@@ -2,6 +2,8 @@
 // Add entries here: { "bad word": "replacement" }
 export const REPLACEMENTS: Record<string, string> = {
   puttane: "perbene",
+  goldone: "pallone",
+  sessuali: "normali",
   zoofilia: "allegria",
 };
 
