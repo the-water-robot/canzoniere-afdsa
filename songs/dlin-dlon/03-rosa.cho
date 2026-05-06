@@ -6,7 +6,7 @@
 {spotify: 0CUnjnc1fLQM3xqm4QguiF}
 
 {start_of_intro: Intro con violini possibilmente}
-[F] [F] [Gm] [C]
+{repeat: 2}
 [F][F][Gm][C]
 {end_of_intro}
 
@@ -20,15 +20,12 @@
 [F]Mi dai le chiavi ma tu
 [F]Sei tu che hai il passe-partout
 [Gm]Per qualsiasi corazon che fa [C]bumburumbumbum
-[F]bumburumbumbum bumburumbumbum 
+[F]bumburumbumbum bumburumbumbum
 [Gm]bumburumbumbumbumbumbum [C]bumburumbumbum
 {end_of_verse}
 
 {start_of_chorus: Ritornello}
-[Bb]Rosa,
-Mamacita [F]hermosa
-Quieres ser mi [A7]esposa
-Vamos a [F]bailar
+{repeat: 2}
 [Bb]Rosa,
 Mamacita [F]hermosa
 Quieres ser mi [A7]esposa
@@ -36,7 +33,7 @@ Vamos a [F]bailar
 {end_of_chorus}
 
 {start_of_instrumental: Strumentale}
-[F][F][Gm][C]
+{repeat: 2}
 [F][F][Gm][C]
 {end_of_instrumental}
 
@@ -48,11 +45,8 @@ Vamos a [F]bailar
 [Gm]tetetetetetetetete [C]tetetetete
 {end_of_verse}
 
-{start_of_chorus: Ritornello finale}
-[Bb]Rosa,
-Mamacita [F]hermosa
-Quieres ser mi [A7]esposa
-Vamos a [F]bailar
+{start_of_chorus: Ritornello}
+{repeat: 2}
 [Bb]Rosa,
 Mamacita [F]hermosa
 Quieres ser mi [A7]esposa
@@ -60,19 +54,12 @@ Vamos a [F]bailar
 {end_of_chorus}
 
 {start_of_solo: Assolo}
-[F][F][Gm][C]
+{repeat: 2}
 [F][F][Gm][C]
 {end_of_solo}
 
 {start_of_chorus: Ritornello finale}
-[Bb]Rosa,
-Mamacita [F]hermosa
-Quieres ser mi [A7]esposa
-Vamos a [F]bailar
-[Bb]Rosa,
-Mamacita [F]hermosa
-Quieres ser mi [A7]esposa
-Vamos a [F]bailar
+{repeat: 3}
 [Bb]Rosa,
 Mamacita [F]hermosa
 Quieres ser mi [A7]esposa

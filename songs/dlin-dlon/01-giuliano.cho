@@ -6,7 +6,7 @@
 {spotify: 0TXjzMUYgyObHn6OjICyo9}
 
 {start_of_intro: Intro con tromba possibilmente}
-[F#][F#][B][B]
+{repeat: 2}
 [F#][F#][B][B]
 {end_of_intro}
 
@@ -50,7 +50,7 @@ e le persone
 {end_of_chorus}
 
 {start_of_instrumental: Strumentale}
-[F#][F#][B][B]
+{repeat: 2}
 [F#][F#][B][B]
 {end_of_instrumental}
 
@@ -61,4 +61,3 @@ Ha un hobby strano
 e le persone
 [F#]Malcapitate nella [C#]sua abitazione
 {end_of_chorus}
-
