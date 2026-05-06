@@ -241,7 +241,7 @@ function SectionBlock({
                 <input
                   value={dreamText}
                   onChange={(e) => onDreamChange(e.target.value)}
-                  placeholder="il tuo sogno…"
+                  placeholder="inventa un sogno…"
                   className="w-full bg-transparent border-b border-dashed border-flamingo/60 text-flamingo italic outline-none placeholder:text-flamingo/35 py-0.5 leading-relaxed"
                 />
               </div>
@@ -335,7 +335,7 @@ function ChordSheet({
           <div>
             <div className="font-display text-3xl font-bold text-[var(--text)]">{name}</div>
             <div className="mt-0.5 font-mono text-[0.62rem] uppercase tracking-widest text-[var(--muted)]">
-              {instrument === "guitar" ? "🎸 Chitarra" : "🎵 Ukulele"}
+              {instrument === "guitar" ? "Chitarra" : "Ukulele"}
             </div>
           </div>
           <button
@@ -392,7 +392,7 @@ function ChordSheet({
           onClick={onSwitchInstrument}
           className="mt-4 w-full rounded-full bg-[var(--border)] px-4 py-2.5 text-sm font-semibold text-[var(--text)] transition hover:opacity-80"
         >
-          Mostra su {instrument === "guitar" ? "🎵 Ukulele" : "🎸 Chitarra"}
+          Mostra su {instrument === "guitar" ? "Ukulele" : "Chitarra"}
         </button>
       </div>
     </div>
