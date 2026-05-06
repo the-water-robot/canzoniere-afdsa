@@ -99,6 +99,8 @@ Per aggiungere parole al filtro, modifica `REPLACEMENTS` in `lib/parental-filter
 ```ts
 const REPLACEMENTS: Record<string, string> = {
   puttane: "perbene",
+  goldone: "pallone",
+  sessuali: "normali",
   zoofilia: "allegria",
   // aggiungi qui
 };
