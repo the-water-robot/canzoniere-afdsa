@@ -442,7 +442,7 @@ function ChordSheet({
 
         <div className="flex justify-center py-2">
           {shape ? (
-            <ChordDiagram shape={shape} instrument={instrument} size={200} />
+            <ChordDiagram shape={shape} instrument={instrument} size={160} />
           ) : (
             <p className="py-8 text-center text-sm text-[var(--muted)]">
               Diagramma non disponibile per{" "}
